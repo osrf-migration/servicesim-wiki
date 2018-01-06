@@ -1,7 +1,7 @@
 # Service Robot Simulator wiki
 
-## [Installation](https://bitbucket.org/osrf/srcsim/wiki/Installation)
-System setup instructions
+## [Install and run](https://bitbucket.org/osrf/servicesim/wiki/Installation)
+System setup instructions and instructions to run teleoperation demo
 
-## [ROS API](https://bitbucket.org/osrf/srcsim/wiki/API)
+## [ROS API](https://bitbucket.org/osrf/servicesim/wiki/API)
 ROS API documentation
