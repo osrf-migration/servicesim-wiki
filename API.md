@@ -25,6 +25,6 @@ These are interfaces to interact with the flow of the task.
 
 Topic name | Message / service | Description | Message definition | Implemented?
 ---------- | ----------------- | ----------- | ------------------ | -----------
-/pickup_guest | Service | Service to call to get a guest to follow the robot | custom_msg | No
-/dropoff_guest | Service | Service to call to get a guest to stop following the robot | custom_msg | No
-/request_guest | Service | Service to call to get infromation aboutthe guest to pick up | custom_msg | No
+/pickup_guest | Service | Service to call to get a guest to follow the robot | [PickUpGuest](https://bitbucket.org/osrf/servicesim/raw/default/srv/PickUpGuest.srv) | No
+/dropoff_guest | Service | Service to call to get a guest to stop following the robot (currently the same interface definition as PickUpGuest) | [DropOffGuest](https://bitbucket.org/osrf/servicesim/raw/default/srv/DropOffGuest.srv) | No
+/request_guest_indentity | Service | Service to call to get information about the guest to pick up | [GetGuestIdentity.srv](https://bitbucket.org/osrf/servicesim/raw/default/srv/GetGuestIdentity.srv) | No
