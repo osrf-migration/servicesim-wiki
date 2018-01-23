@@ -8,7 +8,7 @@ Installation instructions for Ubuntu Xenial (16.04)
 
     TODO
 
-1. Install ROS Lunar
+1. Install ROS Kinetic
 
     TODO
 
