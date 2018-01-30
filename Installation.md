@@ -1,6 +1,4 @@
-# Install and run
-
-## Installation
+# Installation
 
 Installation instructions for Ubuntu Xenial (16.04)
 
