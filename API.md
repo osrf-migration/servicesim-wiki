@@ -23,8 +23,8 @@ Topic name | Message / service | Description | Message definition | Gazebo plugi
 
 These are interfaces to interact with the flow of the task.
 
-Topic name | Message / service | Description | Message definition | Implemented?
----------- | ----------------- | ----------- | ------------------ | -----------
-/pickup_guest | Service | Service to call to get a guest to follow the robot | [PickUpGuest](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/PickUpGuest.srv) | No
-/dropoff_guest | Service | Service to call to get a guest to stop following the robot (currently the same interface definition as PickUpGuest) | [DropOffGuest](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/DropOffGuest.srv) | No
-/request_guest_indentity | Service | Service to call to get information about the guest to pick up | [GetGuestIdentity.srv](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/GetGuestIdentity.srv) | No
+Topic name | Message / service | Description | Message definition | Gazebo plugin used | Implemented?
+---------- | ----------------- | ----------- | ------------------ | ------------------ | -----------
+/servicesim/pickup_guest | Service | Service to call to get a guest to follow the robot | [PickUpGuest](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/PickUpGuest.srv) | servicesim::FollowActorPlugin | Yes
+/servicesim/dropoff_guest | Service | Service to call to get a guest to stop following the robot (currently the same interface definition as PickUpGuest) | [DropOffGuest](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/DropOffGuest.srv) | servicesim::FollowActorPlugin | Yes
+/servicesim/request_guest_identity | Service | Service to call to get information about the guest to pick up | [GetGuestIdentity.srv](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/GetGuestIdentity.srv) | | No
