@@ -44,7 +44,7 @@ Installation instructions for Ubuntu Xenial (16.04)
         cd ..
         . /opt/ros/kinetic/setup.sh
         rosdep install --from-paths src --ignore-src -r -y
-        catkin_make
+        catkin_make_isolated --install
 
     B. From debian packages
 
