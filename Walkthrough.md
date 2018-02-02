@@ -18,13 +18,39 @@ The following will be checked during the whole run and incur penalties:
 
 ### Start
 
-Request guest identity / location / destination.
+1. Launch the competition:
 
-    TODO
+        roslaunch servicesim servicesim.launch
+
+    On your terminal you should see, among other messages, this one:
+
+        [Msg] [ServiceSim] Competition plugin loaded
+
+1. When you're ready to start, call the start service to receive the goals for
+the run:
+
+        rosservice call /servicesim/start
+
+    The response will contain (exact format is TBD):
+
+    * The guest's identity
+    * The pick-up location
+    * The drop-off location
+
+    You'll see a message like the following on your terminal:
+
+        [Msg] [ServiceSim] Started Checkpoint 1 at 00:00:05.333
+        [Msg] Started contain plugin [servicesim/checkpoint1]
 
 ### Checkpoint 1
 
-Go to pick-up location
+The first checkpoint consists of navigating the robot to pick-up location.
+
+Once the robot has reached the correct location, you'll see the following on
+the terminal:
+
+    [Msg] Stopped contain plugin [servicesim/checkpoint1]
+    [Msg] [ServiceSim] Checkpoint [1] complete
 
 ### Checkpoint 2
 
