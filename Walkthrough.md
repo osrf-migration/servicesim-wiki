@@ -40,19 +40,20 @@ goals for the run:
     You'll see a message like the following on your terminal:
 
         [Msg] [ServiceSim] Started Checkpoint 1 at 00:00:05.333
-        [Msg] Started contain plugin [servicesim/checkpoint1]
+        [Msg] Started contain plugin [servicesim/go_to_pick_up]
 
-### Checkpoint 1
+### Checkpoint 1: Go to pick-up
 
 The first checkpoint consists of navigating the robot to pick-up location.
 
 Once the robot has reached the correct location, you'll see the following on
 the terminal:
 
-    [Msg] Stopped contain plugin [servicesim/checkpoint1]
+    [Msg] Stopped contain plugin [servicesim/go_to_pick_up]
     [Msg] [ServiceSim] Checkpoint [1] complete
+    [Msg] [ServiceSim] Started Checkpoint 2 at 00:00:59.862
 
-### Checkpoint 2
+### Checkpoint 2: Pick-up
 
 When close to guest, call the `PickUpGuest` service, for example:
 
@@ -68,7 +69,11 @@ Reasons the request could fail:
 * Wrong robot name used
 * Robot too far from guest
 
-### Checkpoint 3
+If the pick-up request is successful, you'll see this message:
+
+    [Msg] [ServiceSim] Checkpoint [2] complete
+
+### Checkpoint 3: Drop-off
 
 Navigate towards the goal while making sure the guest is following.
 
@@ -89,6 +94,6 @@ Reasons the request could fail:
 
 * Wrong guest name used
 
-### Checkpoint 4
+### Checkpoint 4: Return to start
 
 Return to the point where the robot started the competition from.
