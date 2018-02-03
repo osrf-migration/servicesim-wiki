@@ -26,10 +26,10 @@ The following will be checked during the whole run and incur penalties:
 
         [Msg] [ServiceSim] Competition plugin loaded
 
-1. When you're ready to start, call the start service to receive the goals for
-the run:
+1. When you're ready to start, call the new task service to receive the
+goals for the run:
 
-        rosservice call /servicesim/start
+        rosservice call /servicesim/new_task
 
     The response will contain (exact format is TBD):
 
