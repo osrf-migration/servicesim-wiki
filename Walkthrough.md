@@ -71,7 +71,9 @@ Reasons the request could fail:
 
 If the pick-up request is successful, you'll see this message:
 
+    [Msg] Actor [guest] is following model [servicebot]
     [Msg] [ServiceSim] Checkpoint [2] complete
+    [Msg] [ServiceSim] Started Checkpoint 3 at 00:01:00.862
 
 ### Checkpoint 3: Drop-off
 
@@ -93,6 +95,13 @@ Where the argument is the guest name.
 Reasons the request could fail:
 
 * Wrong guest name used
+* Wrong drop-off location
+
+If the drop-off request is successful, you'll see this message:
+
+    [Msg] Actor [guest] stopped following model [servicebot]
+    [Msg] [ServiceSim] Checkpoint [3] complete
+    [Msg] [ServiceSim] Started Checkpoint 4 at 00:02:00.862
 
 ### Checkpoint 4: Return to start
 
