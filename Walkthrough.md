@@ -13,6 +13,7 @@ The following will be checked during the whole run and incur penalties:
 
 * Colliding with an object
 * Colliding with any humans, including the guest
+* A failed attempt at pick-up or drop-off
 
 ## Walkthrough
 
@@ -39,19 +40,19 @@ goals for the run:
 
     You'll see a message like the following on your terminal:
 
-        [Msg] [ServiceSim] Started Checkpoint 1 at 00:00:05.333
+        [Msg] [ServiceSim] Started Checkpoint "Go to pick-up location" at 00:00:10.536
         [Msg] Started contain plugin [servicesim/go_to_pick_up]
 
 ### Checkpoint 1: Go to pick-up
 
-The first checkpoint consists of navigating the robot to pick-up location.
+The first checkpoint consists of navigating the robot to the pick-up location.
 
 Once the robot has reached the correct location, you'll see the following on
 the terminal:
 
     [Msg] Stopped contain plugin [servicesim/go_to_pick_up]
-    [Msg] [ServiceSim] Checkpoint [1] complete
-    [Msg] [ServiceSim] Started Checkpoint 2 at 00:00:59.862
+    [Msg] [ServiceSim] Checkpoint "Go to pick-up location" complete
+    [Msg] [ServiceSim] Started Checkpoint "Pick-up guest" at 00:00:11.730
 
 ### Checkpoint 2: Pick-up
 
@@ -72,8 +73,8 @@ Reasons the request could fail:
 If the pick-up request is successful, you'll see this message:
 
     [Msg] Actor [guest] is following model [servicebot]
-    [Msg] [ServiceSim] Checkpoint [2] complete
-    [Msg] [ServiceSim] Started Checkpoint 3 at 00:01:00.862
+    [Msg] [ServiceSim] Checkpoint "Pick-up guest" complete
+    [Msg] [ServiceSim] Started Checkpoint "Drop-off guest" at 00:01:33.467
 
 ### Checkpoint 3: Drop-off
 
@@ -100,8 +101,8 @@ Reasons the request could fail:
 If the drop-off request is successful, you'll see this message:
 
     [Msg] Actor [guest] stopped following model [servicebot]
-    [Msg] [ServiceSim] Checkpoint [3] complete
-    [Msg] [ServiceSim] Started Checkpoint 4 at 00:02:00.862
+    [Msg] [ServiceSim] Checkpoint "Drop-off guest" complete
+    [Msg] [ServiceSim] Started Checkpoint "Return to start" at 00:02:00.862
 
 ### Checkpoint 4: Return to start
 
