@@ -25,6 +25,7 @@ These are interfaces to interact with the flow of the task.
 
 Topic name | Message / service | Description | Message definition | Gazebo plugin used | Implemented?
 ---------- | ----------------- | ----------- | ------------------ | ------------------ | -----------
-`/servicesim/new_task` | Service | Start a new task and receive information about its goals (guest, pick-up location, etc) | [NewTask.srv](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/NewTask.srv) | servicesim::Competition | Yes
-`/servicesim/pickup_guest` | Service | Service to call to get a guest to follow the robot | [PickUpGuest](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/PickUpGuest.srv) | servicesim::Competition | Yes
-`/servicesim/dropoff_guest` | Service | Service to call to get a guest to stop following the robot | [DropOffGuest](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/DropOffGuest.srv) | servicesim::Competition | Yes
+`/servicesim/new_task` | Service | Start a new task and receive information about its goals (guest, pick-up location, etc) | [NewTask.srv](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/NewTask.srv) | servicesim::Competition | In progress on branch `game`
+`/servicesim/pickup_guest` | Service | Service to call to get a guest to follow the robot | [PickUpGuest](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/PickUpGuest.srv) | servicesim::Competition | In progress on branch `game`
+`/servicesim/dropoff_guest` | Service | Service to call to get a guest to stop following the robot | [DropOffGuest](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/srv/DropOffGuest.srv) | servicesim::Competition | In progress on branch `game`
+`/servicesim/score` | Message | Get periodic score notifications | [Score](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/msg/Score.msg) | servicesim::Competition | In progress on branch `game`
