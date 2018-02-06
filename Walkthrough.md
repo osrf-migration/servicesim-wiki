@@ -2,6 +2,12 @@ See the [overview](https://bitbucket.org/osrf/servicesim/wiki/Checkpoints%20over
 
 ## Walkthrough
 
+This goes through a whole competition task using the command line to trigger
+ROS services and listen to messages. During the competition, these should be
+done programatically.
+
+> **Tip**: Don't forget to source the appropriate setup files for every new terminal
+
 ### Start
 
 1. Launch the competition:
@@ -11,6 +17,12 @@ See the [overview](https://bitbucket.org/osrf/servicesim/wiki/Checkpoints%20over
     On your terminal you should see, among other messages, this one:
 
         [Msg] [ServiceSim] Competition plugin loaded
+
+1. Temporary:  Right now the simulation is starting paused, so press play on Gazebo for the humans to start moving 
+
+1. Start listening to score messages. On a new terminal, run:
+
+        rostopic echo /servicesim/score
 
 1. When you're ready to start, call the new task service to receive the
 goals for the run:
