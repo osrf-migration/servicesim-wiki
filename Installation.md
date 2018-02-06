@@ -39,7 +39,7 @@ Installation instructions for Ubuntu Xenial (16.04)
     A. From source
 
         mkdir -p ~/ws/src
-        cd ws/src
+        cd ~/ws/src
         hg clone https://chapulina@bitbucket.org/osrf/servicesim
         cd ..
         . /opt/ros/kinetic/setup.sh
