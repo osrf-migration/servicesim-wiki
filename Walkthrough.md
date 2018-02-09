@@ -29,11 +29,11 @@ goals for the run:
 
         rosservice call /servicesim/new_task
 
-    The response will contain (exact format is TBD):
+    The response will contain:
 
-    * The guest's identity
-    * The pick-up location
-    * The drop-off location
+    * The guest's identity (exact format is TBD)
+    * The pick-up location name (i.e. `reception`, `cafe`)
+    * The drop-off location name (i.e. `office_1`, `meeting_room_3`)
 
     You'll see a message like the following on your terminal:
 
