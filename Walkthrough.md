@@ -2,9 +2,13 @@ See the [overview](https://bitbucket.org/osrf/servicesim/wiki/Checkpoints%20over
 
 ## Walkthrough
 
-This goes through a whole competition task using the command line to trigger
-ROS services and listen to messages. During the competition, these should be
-done programatically.
+Let's go through a whole competition task to see how the various ROS messages and 
+services listed on the
+[API](https://bitbucket.org/osrf/servicesim/wiki/API)
+can be used to interact with the competition.
+
+We'll be using the command line to trigger ROS services and listen to messages, but
+during the competition, these should be done programatically.
 
 > **Tip**: Don't forget to source the appropriate setup files for every new terminal
 
@@ -20,12 +24,17 @@ done programatically.
 
 1. Temporary:  Right now the simulation is starting paused, so press play on Gazebo for the humans to start moving 
 
-1. Start listening to score messages. On a new terminal, run:
+1. Start listening to 
+[score messages](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/msg/Score.msg).
+On a new terminal, run:
 
         rostopic echo /servicesim/score
 
-1. When you're ready to start, call the new task service to receive the
-goals for the run:
+    Nothing will be printed until the task starts.
+
+1. When you're ready to start, call the 
+[new task service](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/srv/NewTask.srv)
+to receive the goals for the run:
 
         rosservice call /servicesim/new_task
 
@@ -53,21 +62,24 @@ the terminal:
 
 ### Checkpoint 2: Pick-up
 
-When close to guest, call the `PickUpGuest` service, for example:
+When close to guest, call the 
+[guest pick-up service](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/srv/PickUpGuest.srv),
+for example:
 
     rosservice call /servicesim/pickup_guest guest servicebot
 
 Where the first argument is the guest's name and the second one is the robot's.
 
-If the request is successful, the guest will follow the robot.
+If the request is successful, the guest will start following the robot.
 
 Reasons the request could fail:
 
 * Wrong guest name used
 * Wrong robot name used
 * Robot too far from guest
+* Not yet on this checkpoint
 
-If the pick-up request is successful, you'll see this message:
+If the pick-up request is successful, you'll see messages like these:
 
     [Msg] Actor [guest] is following model [servicebot]
     [Msg] [ServiceSim] Checkpoint "Pick-up guest" complete
@@ -84,7 +96,9 @@ Reasons the guest could drift away:
 
 If the guest drifted away, you're back at **Checkpoint 2**.
 
-Once the destination has been reached, use the `DropOffGuest` service, for example:
+Once the destination has been reached, use the
+[guest drop-off service](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/srv/DropOffGuest.srv),
+for example:
 
     rosservice call /servicesim/dropoff_guest guest
 
@@ -93,14 +107,22 @@ Where the argument is the guest name.
 Reasons the request could fail:
 
 * Wrong guest name used
-* Wrong drop-off location
+* Guest is not in the drop-off location
+* Not yet on this checkpoint
 
 If the drop-off request is successful, you'll see this message:
 
     [Msg] Actor [guest] stopped following model [servicebot]
     [Msg] [ServiceSim] Checkpoint "Drop-off guest" complete
     [Msg] [ServiceSim] Started Checkpoint "Return to start" at 00:02:00.862
+    [Msg] Started contain plugin [servicesim/return_to_start]
 
 ### Checkpoint 4: Return to start
 
-Return to the point where the robot started the competition from.
+Return to the room where the robot started the competition from.
+
+Once the robot has reached the correct location, you'll see the following on
+the terminal:
+
+    [Msg] Stopped contain plugin [servicesim/return_to_start]
+    [Msg] [ServiceSim] Competition complete!
