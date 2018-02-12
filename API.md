@@ -7,7 +7,7 @@ These are interfaces to receive sensor data and send commands to the robot.
 Topic name | Message / service | Description | Message definition | Gazebo plugin used | Implemented?
 ---------- | ----------------- | ----------- | ------------------ | -----------------  | ------------
 `/servicebot/joint_states` | Message | Position, velocity, torque of the various robot joints | [JointState](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/JointState.msg) | joint_state_controller | No
-`/servicebot/scan` | Message | Lidar data | [PointCloud](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/PointCloud.msg) | gazebo_ros_block_laser | No
+`/servicebot/scan` | Message | Lidar data | [LaserScan](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/LaserScan.msg) | gazebo_ros_gpu_laser | No
 `/servicebot/imu` | Message | IMU data | [Imu](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Imu.msg) | gazebo_ros_imu | No
 `/servicebot/camera_front/camera_info` | Message | Calibration and resolution of the camera | [CameraInfo](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/CameraInfo.msg) | gazebo_ros_camera | No
 `/servicebot/camera_front/image_raw` (or image_rect_color) | Message | Image sent by the camera | [Image](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Image.msg) | gazebo_ros_camera | No
