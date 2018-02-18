@@ -22,8 +22,6 @@ during the competition, these should be done programatically.
 
         [Msg] [ServiceSim] Competition plugin loaded
 
-1. Temporary:  Right now the simulation is starting paused, so press play on Gazebo for the humans to start moving 
-
 1. Start listening to 
 [score messages](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/msg/Score.msg).
 On a new terminal, run:
@@ -41,13 +39,25 @@ to receive the goals for the run:
     The response will contain:
 
     * The guest's identity (exact format is TBD)
-    * The pick-up location name (i.e. `reception`, `cafe`)
-    * The drop-off location name (i.e. `office_1`, `meeting_room_3`)
+    * The pick-up location name (i.e. `FrontDesk`, `PublicCafe`)
+    * The drop-off location name (i.e. `PrivateOfficeA`, `PublicMeetingRoomC`)
 
     You'll see a message like the following on your terminal:
 
         [Msg] [ServiceSim] Started Checkpoint "Go to pick-up location" at 00:00:10.536
         [Msg] Started contain plugin [servicesim/go_to_pick_up]
+
+At any moment, you can use the
+[room info service](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/srv/RoomInfo.srv)
+to get the world coordinates of any location.
+For example, if we want to know the position of room `PrivateCafe`, we can call:
+
+    rosservice call /servicesim/room_info PrivateCafe
+
+The response will contain the XYZ world coordinates of the minimum and maximum corners of
+the room's pick-up/drop-off area. According to the room, this may be inside or in front of
+it. For example, a meeting room's area is inside it, but a bathroom's area is in front of it.
+All rooms have rectangular areas which are aligned with the world.
 
 ### Checkpoint 1: Go to pick-up
 
