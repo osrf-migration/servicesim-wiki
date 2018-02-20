@@ -17,7 +17,7 @@ Topic name | Message / service | Description | Message definition | Gazebo plugi
 `/servicebot/odom` | Message | Odometry data of the robot | [Odometry](https://github.com/ros/common_msgs/blob/jade-devel/nav_msgs/msg/Odometry.msg) | gazebo_ros_diff_drive | Yes
 `/servicebot/<JOINT_NAME>_controller/command` | Message | command topic to control individual robot joints | [Float64](https://github.com/ros/std_msgs/blob/groovy-devel/msg/Float64.msg) | gazebo_ros_control | Yes
 `/servicebot/goal` | Message | goal sent to navigation algorithm | [PoseStamped](https://github.com/ros/common_msgs/blob/jade-devel/geometry_msgs/msg/PoseStamped.msg) | | No
-
+`/servicebot/rfid` | Message | RFID sensor readings | [ActorNames](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/msg/ActorNames.msg) | servicesim::VicinityPlugin | Yes
 
 ### Task interface
 
