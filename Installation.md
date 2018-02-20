@@ -43,7 +43,7 @@ Installation instructions for Ubuntu Xenial (16.04)
         hg clone https://chapulina@bitbucket.org/osrf/servicesim
         cd ..
         . /opt/ros/kinetic/setup.sh
-        rosdep install --from-paths src --ignore-src -r -y
+        rosdep install --from-paths src --ignore-src --skip-keys gazebo -r -y
         catkin_make_isolated --install
         . install_isolated/setup.bash
 
