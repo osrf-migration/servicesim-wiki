@@ -41,7 +41,7 @@ to receive the goals for the run:
 
     The response will contain:
 
-    * The guest's identity (exact format is TBD)
+    * The guest's identity, which will match their RFID sensor reading
     * The pick-up location name (i.e. `FrontDesk`, `PublicCafe`)
     * The drop-off location name (i.e. `PrivateOfficeA`, `PublicMeetingRoomC`)
 
@@ -50,14 +50,14 @@ to receive the goals for the run:
         [Msg] [ServiceSim] Started Checkpoint "Go to pick-up location" at 00:00:10.536
         [Msg] Started contain plugin [servicesim/go_to_pick_up]
 
-At any moment, you can use the
+1. At any moment, you can use the
 [room info service](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/srv/RoomInfo.srv)
 to get the world coordinates of any location.
 For example, if we want to know the position of room `PrivateCafe`, we can call:
 
-    rosservice call /servicesim/room_info PrivateCafe
+        rosservice call /servicesim/room_info PrivateCafe
 
-The response will contain the XYZ world coordinates of the minimum and maximum corners of
+    The response will contain the XYZ world coordinates of the minimum and maximum corners of
 the room's pick-up/drop-off area. According to the room, this may be inside or in front of
 it. For example, a meeting room's area is inside it, but a bathroom's area is in front of it.
 All rooms have rectangular areas which are aligned with the world.
@@ -74,6 +74,12 @@ the terminal:
     [Msg] [ServiceSim] Started Checkpoint "Pick-up guest" at 00:00:11.730
 
 ### Checkpoint 2: Pick-up
+
+For this checkpoint, it is convenient to use the RFID sensor to localize the guest. On a terminal you can listen to the sensor topic:
+
+    rostopic echo /servicebot/rfid
+
+Whenever the robot gets close to a person, the person's RFID identity will be notified on this topic.
 
 When close to guest, call the 
 [guest pick-up service](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/srv/PickUpGuest.srv),
