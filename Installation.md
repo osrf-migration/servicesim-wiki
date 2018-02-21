@@ -49,8 +49,35 @@ Installation instructions for Ubuntu Xenial (16.04)
 
     B. From debian packages
 
-        TODO
+        sudo apt install -y ros-kinetic-servicebot-2dnav\
+                            ros-kinetic-servicesim-competition\
+                            ros-kinetic-servicebot-control\
+                            ros-kinetic-servicesim-example-python-solution\
+                            ros-kinetic-servicebot-description\
+                            ros-kinetic-service-tools\
+                            ros-kinetic-servicesim
 
     Check installation worked by launching the servicesim example world:
 
         roslaunch servicesim servicesim.launch
+
+
+# Updating existing installation
+
+A. From source
+
+    cd ~/ws/
+    . /opt/ros/kinetic/setup.sh
+    rosdep install --from-paths src --ignore-src --skip-keys gazebo -r -y
+    catkin_make_isolated --install
+
+B. From debian packages
+
+    sudo apt update
+    sudo apt install -y ros-kinetic-servicebot-2dnav\
+                        ros-kinetic-servicesim-competition\
+                        ros-kinetic-servicebot-control\
+                        ros-kinetic-servicesim-example-python-solution\
+                        ros-kinetic-servicebot-description\
+                        ros-kinetic-service-tools\
+                        ros-kinetic-servicesim
