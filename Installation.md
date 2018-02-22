@@ -68,7 +68,7 @@ A. From source
 
     cd ~/ws/
     . /opt/ros/kinetic/setup.sh
-    rosdep install --from-paths src --ignore-src --skip-keys gazebo -r -y
+    rosdep install --from-paths src --ignore-src --skip-keys gazebo --skip-keys libgazebo7-dev -r -y
     catkin_make_isolated --install
 
 B. From debian packages
