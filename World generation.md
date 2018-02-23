@@ -67,12 +67,12 @@ New worlds can be generated based on a [config.yaml](https://bitbucket.org/osrf/
     >
     > For example: erb s=100 d=true service.world.erb > debug_100.world
 
-1. **TODO** To use one of the generated worlds, you must set the `USE_CUSTOM_WORLD`
+1. To use one of the generated worlds, you must set the `USE_CUSTOM_WORLD`
    environment variable to true:
 
         export USE_CUSTOM_WORLD=1
 
-1. **TODO** You also need to set another environment variable with the full path to the
+1. You also need to set another environment variable with the full path to the
    world file you wish to use, for example:
 
         export CUSTOM_WORLD_PATH=~/servicesim_worlds/custom.world
