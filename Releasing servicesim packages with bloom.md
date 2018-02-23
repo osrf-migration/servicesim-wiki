@@ -62,6 +62,6 @@ then the `VERSION` is `0.0.0` and the `RELEASE_VERSION` is `3`.
 If a new package is added to the servicesim project, a new bloom release must be made and a packaging job must be created for it.
 
 1. Run bloom (as above) and the new package will be automatically detected.
-2. Add the name of the package to the [list in release-tools](https://bitbucket.org/osrf/release-tools/src/a43c48666bba92f6fe9d7e20a83902d0b6980e71/jenkins-scripts/dsl/servicesim.dsl?at=add-servicesim&fileviewer=file-view-default#servicesim.dsl-9).
+2. Add the name of the package to the [list in release-tools](https://bitbucket.org/osrf/release-tools/src/1f2b2c01e3d09e23cfbe1617de22b2bbec589edb/jenkins-scripts/dsl/servicesim.dsl?at=default&fileviewer=file-view-default#servicesim.dsl-9).
 3. Trigger a new build of https://build.osrfoundation.org/view/proj_servicesim/job/_dsl_servicesim/
 3. Trigger new builds for all servicesim packages (as above).
