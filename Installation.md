@@ -31,7 +31,7 @@ Installation instructions for Ubuntu Xenial (16.04)
     should open:
 
         . /opt/ros/kinetic/setup.bash
-        rosmaster & rosrun rviz rviz
+        roscore & rviz
 
 1. Install ServiceSim
 
@@ -40,7 +40,7 @@ Installation instructions for Ubuntu Xenial (16.04)
 
         mkdir -p ~/ws/src
         cd ~/ws/src
-        hg clone https://chapulina@bitbucket.org/osrf/servicesim
+        hg clone https://bitbucket.org/osrf/servicesim
         cd ..
         . /opt/ros/kinetic/setup.sh
         rosdep install --from-paths src --ignore-src --skip-keys gazebo -r -y
