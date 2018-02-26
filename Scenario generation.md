@@ -8,16 +8,10 @@ A scenario is defined by a combination `.world` and `.launch` files. The followi
 
 Follow these steps to locally generate and use a scenario.
 
-1. Make sure you have a recent version of ruby installed (recommended > 2.2)
+1. Install Ruby:
 
-        ruby --version
-
-1. In case you have an old version, you can upgrade as follows:
-
-        sudo apt-get install software-properties-common python-software-properties
-        sudo apt-add-repository ppa:brightbox/ruby-ng
         sudo apt-get update
-        sudo apt-get install ruby2.2 ruby2.2-dev
+        sudo apt-get install ruby2.3 ruby2.3-dev
 
 1. Create a directory to hold the scripts and world files:
 
