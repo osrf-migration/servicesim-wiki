@@ -64,7 +64,7 @@ Try changing the `targets: robot_start` property to `BackEntrance` and run the f
 
 Now use that scenario and see how the robot starts near the back entrance:
 
-    roslaunch servicesim servicesim.launch custom:=true custom_prefix:=/home/louise/servicesim_worlds/back_entrance
+    roslaunch servicesim servicesim.launch custom:=true custom_prefix:=/home/<user>/servicesim_worlds/back_entrance
 
 If you delete or comment out options in the file, the template will pick them randomly.
 
