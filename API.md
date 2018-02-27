@@ -18,6 +18,7 @@ Topic name | Message / service | Description | Message definition | Gazebo plugi
 `/servicebot/<JOINT_NAME>_controller/command` | Message | command topic to control individual robot joints | [Float64](https://github.com/ros/std_msgs/blob/groovy-devel/msg/Float64.msg) | gazebo_ros_control | Yes
 `/servicebot/goal` | Message | goal sent to navigation algorithm | [PoseStamped](https://github.com/ros/common_msgs/blob/jade-devel/geometry_msgs/msg/PoseStamped.msg) | | No
 `/servicebot/rfid` | Message | RFID sensor readings | [ActorNames](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/msg/ActorNames.msg) | servicesim::VicinityPlugin | Yes
+`/servicebot/initialpose` | Message | Robot's initial pose in the world | [PoseWithCovarianceStamped](https://github.com/ros/common_msgs/blob/jade-devel/geometry_msgs/msg/PoseWithCovarianceStamped.msg) | servicesim::Competition | Yes
 
 ### Task interface
 
