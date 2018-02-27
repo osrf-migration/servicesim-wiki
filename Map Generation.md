@@ -16,11 +16,34 @@ Instructions copied from [here](http://gazebosim.org/tutorials?tut=custom_messag
 
 ### Build and Deploy ###
 
-*  To build this project, create a build directory, run CMake and then make:
+*  To build this project, create a build directory:
 
         cd <path>/collision_map_creator_plugin
         mkdir build
         cd build
+
+*  Note: I (wjwwood) had to apply this patch to get it to properly find gazebo8 on my machine:
+
+```diff
+diff -r 72f3e028dab7 CMakeLists.txt
+--- a/CMakeLists.txt	Wed Jan 25 17:15:05 2017 +0100
++++ b/CMakeLists.txt	Mon Feb 26 16:43:07 2018 -0800
+@@ -5,8 +5,8 @@
+ 
+ include (FindPkgConfig)
+ if (PKG_CONFIG_FOUND)
+-  pkg_check_modules(GAZEBO gazebo)
+-  pkg_check_modules(SDF sdformat)
++  find_package(gazebo REQUIRED)
++  pkg_check_modules(SDF sdformat REQUIRED)
+ endif()
+ include_directories(
+   ${GAZEBO_INCLUDE_DIRS}
+
+```
+
+*  And then run cmake and make:
+
         cmake ..
         make -j$( getconf _NPROCESSORS_ONLN )
 
