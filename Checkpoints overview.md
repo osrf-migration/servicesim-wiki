@@ -36,9 +36,9 @@ The robot must then return to the area where it started the competition from.
 
 The following will be checked during the whole run and incur penalties:
 
-* Colliding with an object
-* Colliding with any humans, including the guest
-* A failed attempt at pick-up or drop-off
+* Colliding with objects or humans
+* Getting too close to objects or humans, without necessarily colliding
+* Failed attempts at picking-up or dropping-off
 
 ### More
 
