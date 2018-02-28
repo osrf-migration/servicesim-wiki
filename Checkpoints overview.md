@@ -11,8 +11,6 @@ The robot and the guest start in different areas of the map. See [this page](htt
 
 The first checkpoint is complete once the robot enters the same area as the guest.
 
-Once completed, we never return to this checkpoint. 
-
 ***
 ### **Checkpoint 2** Pick-up guest
 
