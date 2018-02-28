@@ -23,6 +23,9 @@ Step-by-step walkthrough of the competition in "god mode"
 ### [ROS API](https://bitbucket.org/osrf/servicesim/wiki/API)
 Messages and services documentation
 
+### [Room names](https://bitbucket.org/osrf/servicesim/wiki/Room%20names)
+List of all rooms in the competition
+
 ### [Example solution](https://bitbucket.org/osrf/servicesim/wiki/https://bitbucket.org/osrf/servicesim/wiki/Running%20Example%20Solution)
 Tutorial going through a program that has an example solution
 
