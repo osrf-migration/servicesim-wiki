@@ -1,5 +1,7 @@
 # Service Robot Simulator wiki
 
+![servicesim.gif](https://bitbucket.org/repo/gkR8znK/images/141741946-servicesim.gif)
+
 ***
 ## Overview
 ***
