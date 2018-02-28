@@ -6,22 +6,25 @@ After a competition run, the competitor will receive a single number consisting 
 
 The competitor with the lowest score wins.
 
-The final score is a weighted sum of the time to complete each checkpoint, plus penalties. The weight of each item is configurable in `service.world`.
+The final score is a weighted sum of the time to complete each checkpoint, plus penalties. The weight of each item is [configurable](https://bitbucket.org/osrf/servicesim/wiki/Scenario%20generation) in `config.yaml`.
 
-Checkpoint time items:
+### Checkpoint time items
 
-* Time to reach pick-up location (CP1)
-* The sum of all the times the robot took to re-acquire the guest (CP2)
-* The sum of all the times the guest was following the robot (CP3) 
-* Time to return to start location (CP4)
+* **Checkpoint 1** Time to reach pick-up location
+* **Checkpoint 2** The sum of all the time intervals in which the robot took to (re)acquire the guest
+* **Checkpoint 3** The sum of all the time intervals in which the guest was following the robot
+* **Checkpoint 4** Time to return to start location
 
-Penalty items:
+### Penalty items
 
-* Number of collisions with office objects
-* Number of collisions with humans
-* Number of collisions with guest
+* Collisions with office objects
+* Collisions with humans
+* Approximation to office objects
+* Approximation to humans
 * Number of failed pick-up attempts
+* Number of times the guest deviated because the robot moved too fast
+* Number of failed drop-off attempts
 
-So the final score is:
+### Final score
 
 `Score = SUM ( item_i * weight_i )`
