@@ -1,17 +1,40 @@
 # Service Robot Simulator wiki
 
-## [Install](https://bitbucket.org/osrf/servicesim/wiki/Installation)
+***
+## Overview
+***
+
+### [Checkpoints](https://bitbucket.org/osrf/servicesim/wiki/Checkpoints%20overview)
+Description of the competition task
+
+### [Scoring](https://bitbucket.org/osrf/servicesim/wiki/Scoring)
+How the score is calculated
+
+***
+## Try it out
+***
+
+### [Install](https://bitbucket.org/osrf/servicesim/wiki/Installation)
 System setup instructions
 
-## [Software architecture](https://bitbucket.org/osrf/servicesim/wiki/Structure)
+### [Walkthrough](https://bitbucket.org/osrf/servicesim/wiki/Walkthrough) 
+Step-by-step walkthrough of the competition in "god mode"
+
+### [ROS API](https://bitbucket.org/osrf/servicesim/wiki/API)
+Messages and services documentation
+
+### [Example solution](https://bitbucket.org/osrf/servicesim/wiki/https://bitbucket.org/osrf/servicesim/wiki/Running%20Example%20Solution)
+Tutorial going through a program that has an example solution
+
+### [Scenario generation](https://bitbucket.org/osrf/servicesim/wiki/Scenario%20generation)
+How to create custom competition scenarios
+
+***
+## Advaced
+***
+
+### [Software architecture](https://bitbucket.org/osrf/servicesim/wiki/Structure)
 High-level details on how the competition software is structured
 
-## Competition
-
-* [Checkpoints](https://bitbucket.org/osrf/servicesim/wiki/Checkpoints%20overview) overview
-
-* Step-by-step [walkthrough](https://bitbucket.org/osrf/servicesim/wiki/Walkthrough) of the competition
-
-* [Scoring](https://bitbucket.org/osrf/servicesim/wiki/Scoring) details
-
-* [ROS API](https://bitbucket.org/osrf/servicesim/wiki/API) documentation
+### [Launch files](https://bitbucket.org/osrf/servicesim/wiki/Structure)
+Usage and parameters for each launch file provided
