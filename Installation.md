@@ -16,6 +16,8 @@ Installation instructions for Ubuntu Xenial (16.04)
 
         gazebo --verbose
 
+    ![gazebolaunch.png](https://bitbucket.org/repo/gkR8znK/images/443494770-gazebolaunch.png)
+
 1. Install ROS Kinetic
 
     On a terminal, run the following commands:
@@ -26,28 +28,26 @@ Installation instructions for Ubuntu Xenial (16.04)
         sudo apt install -y ros-kinetic-desktop ros-kinetic-gazebo8-ros-pkgs ros-kinetic-gazebo8-ros-control
         sudo rosdep init
         rosdep update
+        echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+        source ~/.bashrc
 
     Test the installation worked by sourcing Kinetic and running RViz, a window
     should open:
 
-        . /opt/ros/kinetic/setup.bash
         roscore & rviz
+
+    ![rviz.png](https://bitbucket.org/repo/gkR8znK/images/3117604865-rviz.png)
+
+    After closing the window, be sure to terminate `roscore` too, by typing:
+
+        fg
+
+    And then killing the program with `Ctrl + C`.
+        
 
 1. Install ServiceSim
 
-
-    A. From source
-
-        mkdir -p ~/ws/src
-        cd ~/ws/src
-        hg clone https://bitbucket.org/osrf/servicesim
-        cd ..
-        . /opt/ros/kinetic/setup.sh
-        rosdep install --from-paths src --ignore-src --skip-keys gazebo --skip-keys libgazebo7-dev -r -y
-        catkin_make_isolated --install
-        . install_isolated/setup.bash
-
-    B. From debian packages
+    Install all the packages provided by ServiceSim as follows:
 
         sudo apt install -y ros-kinetic-servicebot-2dnav\
                             ros-kinetic-servicesim-competition\
@@ -57,10 +57,36 @@ Installation instructions for Ubuntu Xenial (16.04)
                             ros-kinetic-service-tools\
                             ros-kinetic-servicesim
 
-    Check installation worked by launching the servicesim example world:
+    Check installation worked by launching the example world:
 
-        . /opt/ros/kinetic/setup.bash
         roslaunch servicesim servicesim.launch
+
+    You should see 3 windows, one with the Gazebo simulation:
+
+    ![ss1.png](https://bitbucket.org/repo/gkR8znK/images/287547113-ss1.png)
+
+    One with sensors and other visualizations on RViz:
+
+    ![ss2.png](https://bitbucket.org/repo/gkR8znK/images/1518887213-ss2.png)
+
+    And an RQT dashboard with several controls and camera views:
+
+    ![ss3.png](https://bitbucket.org/repo/gkR8znK/images/1585354643-ss3.png)
+
+### Alternative: install from source
+
+If you'd like to run the latest changes in the code which haven't been released yet, you can do as follows:
+
+      mkdir -p ~/ws/src
+      cd ~/ws/src
+      hg clone https://bitbucket.org/osrf/servicesim
+      cd ..
+      rosdep install --from-paths src --ignore-src --skip-keys gazebo --skip-keys libgazebo7-dev -r -y
+      catkin_make_isolated --install
+
+Remember to source this local install for every new terminal you open, otherwise the source install can't be found.
+
+      . ~/ws/install_isolated/setup.bash
 
 ## Next
 
