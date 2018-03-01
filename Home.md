@@ -35,7 +35,7 @@ Tutorial going through a program that has an example solution
 How to create custom competition scenarios
 
 ***
-## Advaced
+## Advanced
 ***
 
 ### [Software architecture](https://bitbucket.org/osrf/servicesim/wiki/Structure)
