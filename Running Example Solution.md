@@ -42,4 +42,4 @@ TODO: things they should see the example solution doing
 
 The next tutorial will describe how you can get a local working copy of our example solution which you can edit and iterate on as a template for your own solution:
 
-https://bitbucket.org/osrf/servicesim/wiki/Start%20New%20Project%20Based%20on%20Example%20Solution
+[Start New Project Based on Example Solution](https://bitbucket.org/osrf/servicesim/wiki/Start%20New%20Project%20Based%20on%20Example%20Solution)
