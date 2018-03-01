@@ -9,7 +9,7 @@ In order to setup your own local working copy of our example you'll need a "[cat
 Before downloading our example, we'll setup a catkin workspace:
 
 ```
-$ mkdir -p ~/my_servicesim_ws/src
+mkdir -p ~/my_servicesim_ws/src
 ```
 
 A catkin workspace is just a folder with a prescribed layout (you can adjust the layout too, but it's recommended to go with the default).
@@ -20,19 +20,19 @@ Here we're recommending that you locate the workspace in `~/my_servicesim_ws`, b
 Next you'll want to duplicate our package by downloading it from our source repository (the debian package you installed doesn't come with the build files you need) and making a copy of it in your local catkin workspace.
 
 ```
-$ mkdir -p /tmp/temporary_clones
-$ cd /tmp/temporary_clones
-$ hg clone https://bitbucket.org/osrf/servicesim -b default
-$ cp -r servicesim/competitor_example_solution/servicesim_example_python_solution ~/my_servicesim_ws/src
+mkdir -p /tmp/temporary_clones
+cd /tmp/temporary_clones
+hg clone https://bitbucket.org/osrf/servicesim -b default
+cp -r servicesim/competitor_example_solution/servicesim_example_python_solution ~/my_servicesim_ws/src
 ```
 
 After that you can delete the temporary clone of our repository with
 
 ```
-$ rm -rf /tmp/temporary_clones
+rm -rf /tmp/temporary_clones
 ```
 
-### Renaming the Example
+### Renaming the example
 
 Before making changes, you'll want to rename the package you copied to avoid confusing it with the example solution installed from `apt`.
 We'll recommend that you use the new package name `my_servicesim_python_solution`, but you can pick any name you like, just make sure to use this name in the follow instructions.
@@ -40,11 +40,14 @@ We'll recommend that you use the new package name `my_servicesim_python_solution
 First you'll want to rename the folder of the package:
 
 ```
-$ cd ~/my_servicesim_ws/src
-$ mv servicesim_example_python_solution my_servicesim_python_solution
+cd ~/my_servicesim_ws/src
+mv servicesim_example_python_solution my_servicesim_python_solution
 ```
+Now open the `package.xml` file:
 
-Then you need to update the name in both the `package.xml` and the `CMakeLists.txt`, such that they look like this respectively:
+    gedit my_servicesim_python_solution/package.xml 
+
+Edit it like this:
 
 ```xml
 <?xml version="1.0"?>
@@ -55,6 +58,14 @@ Then you need to update the name in both the `package.xml` and the `CMakeLists.t
 </package>
 ```
 
+Save it and close it.
+
+Now open the `CMakeLists.txt` file:
+
+    gedit my_servicesim_python_solution/CMakeLists.txt
+
+And change it like this, save and close.
+
 ```cmake
 cmake_minimum_required(VERSION 2.8.3)
 project(my_servicesim_python_solution)
@@ -63,6 +74,10 @@ project(my_servicesim_python_solution)
 ```
 
 Finally, you need to update the launch file, so that it runs the copy of the example solution and not the one installed from `apt`:
+
+    gedit my_servicesim_python_solution/launch/example_solution.launch 
+
+And change:
 
 ```
 <launch>
@@ -80,41 +95,28 @@ Now you're ready to build and run your copy of the example.
 
 ### Build the Copy of the Example
 
-To build the workspace which you created above, you need to:
-
-- source the `setup.bash` file for ROS to work
-- change to the directory of the workspace
-- run the build command
-
-So the commands to do that are:
+To build the workspace which you created above, you need to run the build command from the root directory of the workspace:
 
 ```
-$ source /opt/ros/kinetic/setup.bash
-$ cd ~/my_servicesim_ws/src
-$ catkin_make_isolated --install
+cd ~/my_servicesim_ws
+catkin_make_isolated --install
 ```
 
-### Running the Copy of the Example
+### Running the copy of the example
 
 Finally, you're ready to run your copy of the example solution.
 
-We recommend that you run things in one terminal and build things in a different terminal, so open a new terminal and then source your workspace that you built in the previous step.
+1. On a new terminal, run the competition:
 
-Then you can run the competition and then the copy of the solution as described in the [previous tutorial](https://bitbucket.org/osrf/servicesim/wiki/Running%20Example%20Solution):
+        roslaunch servicesim servicesim.launch rviz:=false teleop:=false
 
-```
-# in a new terminal, start the competition
-$ source /opt/ros/kinetic/setup.bash
-$ roslaunch servicesim servicesim.launch rviz:=false teleop:=false
-```
+1. Now we're going to run your copy of the solution, which is similar to what was described in the [previous tutorial](https://bitbucket.org/osrf/servicesim/wiki/Running%20Example%20Solution). We recommend that you run things in one terminal and build things in a different terminal. So open a new terminal and then source your workspace that you built in the previous step:
 
-And then run your copy of the solution:
+        source ~/my_servicesim_ws/install_isolated/setup.bash
 
-```
-# in yet another new terminal, run the example
-$ source ~/my_servicesim_ws/install_isolated/setup.bash
-$ roslaunch my_servicesim_python_solution example_solution.launch
-```
+1. Now run your copy of the solution in that terminal:
+
+        roslaunch my_servicesim_python_solution example_solution.launch
 
 You can reuse the terminals to build, run the competition, and run the solution, but it's a good idea to keep a separate terminal for each task.
 
