@@ -120,4 +120,6 @@ You can reuse the terminals to build, run the competition, and run the solution,
 
 ### Next Tutorial
 
-In the next tutorial we will describe the contents of the example solution and point out places you might want to modify it: TODO
+In the next tutorial we will describe the contents of the example solution and point out places you might want to modify it:
+
+[Understanding the Example Solution](http://wiki.ros.org/servicesim/Tutorials/UnderstandingTheExampleSolution)
