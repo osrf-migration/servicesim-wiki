@@ -25,6 +25,10 @@ The final score is a weighted sum of the time to complete each checkpoint, plus 
 * Number of times the guest deviated because the robot moved too fast
 * Number of failed drop-off attempts
 
+### Weights
+
+Each item has a configurable weight associated with it. See the parameters on the [Configuration page](https://bitbucket.org/osrf/servicesim/wiki/Configuration%20-%20config.yaml). 
+
 ### Final score
 
 `Score = SUM ( item_i * weight_i )`
