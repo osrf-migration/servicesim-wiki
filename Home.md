@@ -43,3 +43,6 @@ High-level details on how the competition software is structured
 
 ### [Launch files](https://bitbucket.org/osrf/servicesim/wiki/Launch%20files)
 Usage and parameters for each launch file provided
+
+### [Troubleshooting](https://bitbucket.org/osrf/servicesim/wiki/Troubleshooting)
+Answers to some common problems.
