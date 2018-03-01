@@ -131,25 +131,41 @@ the terminal:
     [Msg] [ServiceSim] Started Checkpoint "Pick-up guest" at 00:00:11.730
 
 ***
-### 6. Checkpoint 2: Pick-up
+### 6. Use the RFID sensor
 
-For this checkpoint, it is convenient to use the robot's RFID sensor to localize the guest. On a terminal you can listen to the sensor topic:
+For the next checkpoint, it will be convenient to use the robot's RFID sensor to localize the guest. On a terminal you can listen to [RFID sensor messages](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/msg/ActorNames.msg):
 
     rostopic echo /servicebot/rfid
 
-Whenever the robot gets close to a person, the person's RFID identity will be notified on this topic.
+Whenever the robot gets close to a person, the person's RFID identity will be notified on this topic, for example:
 
-When close to guest, call the 
+~~~
+$ rostopic echo /servicebot/rfid
+actor_names: ['human_24182', 'human_86138']
+---
+actor_names: ['human_24182', 'human_86138']
+---
+actor_names: ['human_24182', 'human_86138']
+---
+actor_names: ['human_24182', 'human_86138']
+~~~
+
+***
+### 7. Checkpoint 2: Pick-up guest
+
+Once you've made sure you're close to the guest, call the 
 [guest pick-up service](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/srv/PickUpGuest.srv),
 for example:
 
-    rosservice call /servicesim/pickup_guest guest servicebot
+    rosservice call /servicesim/pickup_guest human_86138 servicebot
 
-Where the first argument is the guest's name and the second one is the robot's.
+Where the first argument is the guest's name and the second one is the robot's. This is simulating a real-world interaction in which the robot would engage the human guest.
+
+You can also call this service from the dashboard's "Service Caller".
 
 If the request is successful, the guest will start following the robot.
 
-Reasons the request could fail:
+There are a few reasons the request could fail, which will be printed on the terminal if it happens and result in a score penalty. These are:
 
 * Wrong guest name used
 * Wrong robot name used
@@ -162,16 +178,13 @@ If the pick-up request is successful, you'll see messages like these:
     [Msg] [ServiceSim] Started Checkpoint "Drop-off guest" at 00:01:33.467
 
 ***
-### 7. Checkpoint 3: Drop-off
+### 8. Checkpoint 3: Drop-off
 
-Navigate towards the goal while making sure the guest is following.
+Navigate towards the goal while monitoring the guest to make sure they are following. You can also try this out by teleoperating the robot or teleporting it on simulation.
 
-Reasons the guest could drift away:
+The competition makes the human drift away from the robot from time to time. When that happens, the competitor is back at **Checkpoint 2** and must navigate back towards the guest and call the pick-up service once more.
 
-* Robot moved too fast and got too far from guest
-* One of the random drift times defined in the world file has been reached
-
-If the guest drifted away, you're back at **Checkpoint 2**.
+The guest could also drift away because the robot moved too fast for them to follow, this incurs a penalty.
 
 Once the destination has been reached, use the
 [guest drop-off service](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/srv/DropOffGuest.srv),
@@ -184,7 +197,7 @@ Where the argument is the guest name.
 Reasons the request could fail:
 
 * Wrong guest name used
-* Guest is not in the drop-off location
+* Guest is not in the drop-off location (make sure the guest themselves are inside the min/max coordinates given by the  `room_info` service)
 * Not yet on this checkpoint
 
 If the drop-off request is successful, you'll see this message:
@@ -193,9 +206,9 @@ If the drop-off request is successful, you'll see this message:
     [Msg] [ServiceSim] Started Checkpoint "Return to start" at 00:02:00.862
 
 ***
-### 8. Checkpoint 4: Return to start
+### 9. Checkpoint 4: Return to start
 
-Return to the room where the robot started the competition from.
+The last checkpoint consists of returning to the room where the robot started the competition from.
 
 Once the robot has reached the correct location, you'll see the following on
 the terminal:
