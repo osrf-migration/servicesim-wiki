@@ -19,7 +19,7 @@ during the competition, these should be done programatically.
         roslaunch servicesim servicesim.launch
 
     This launchfiles launch many nodes at once, for more details and control on what is being launch please refer to
-[this page](https://bitbucket.org/osrf/servicesim/wiki/Servicesim_Launchfiles)
+[this page](https://bitbucket.org/osrf/servicesim/wiki/Launch%20files)
 
     On your terminal you should see, among other messages, this one:
 
