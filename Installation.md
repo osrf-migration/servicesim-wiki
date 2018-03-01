@@ -43,7 +43,7 @@ Installation instructions for Ubuntu Xenial (16.04)
         hg clone https://bitbucket.org/osrf/servicesim
         cd ..
         . /opt/ros/kinetic/setup.sh
-        rosdep install --from-paths src --ignore-src --skip-keys gazebo -r -y
+        rosdep install --from-paths src --ignore-src --skip-keys gazebo --skip-keys libgazebo7-dev -r -y
         catkin_make_isolated --install
         . install_isolated/setup.bash
 
@@ -60,24 +60,3 @@ Installation instructions for Ubuntu Xenial (16.04)
     Check installation worked by launching the servicesim example world:
 
         roslaunch servicesim servicesim.launch
-
-
-# Updating existing installation
-
-A. From source
-
-    cd ~/ws/
-    . /opt/ros/kinetic/setup.sh
-    rosdep install --from-paths src --ignore-src --skip-keys gazebo --skip-keys libgazebo7-dev -r -y
-    catkin_make_isolated --install
-
-B. From debian packages
-
-    sudo apt update
-    sudo apt install -y ros-kinetic-servicebot-2dnav\
-                        ros-kinetic-servicesim-competition\
-                        ros-kinetic-servicebot-control\
-                        ros-kinetic-servicesim-example-python-solution\
-                        ros-kinetic-servicebot-description\
-                        ros-kinetic-service-tools\
-                        ros-kinetic-servicesim
