@@ -6,19 +6,18 @@ These are interfaces to receive sensor data and send commands to the robot.
 
 Topic name | Message / service | Description | Message definition | Gazebo plugin used | Implemented?
 ---------- | ----------------- | ----------- | ------------------ | -----------------  | ------------
-`/servicebot/joint_states` | Message | Position, velocity, torque of the various robot joints | [JointState](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/JointState.msg) | joint_state_controller | Yes
-`/servicebot/scan` | Message | Lidar data | [LaserScan](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/LaserScan.msg) | gazebo_ros_gpu_laser | Yes
-`/servicebot/imu` | Message | IMU data | [Imu](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Imu.msg) | gazebo_ros_imu | Yes
-`/servicebot/camera_front/camera_info` | Message | Calibration and resolution of the camera | [CameraInfo](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/CameraInfo.msg) | gazebo_ros_camera | Yes
-`/servicebot/camera_front/image_raw` (or image_rect_color) | Message | Image sent by the camera | [Image](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Image.msg) | gazebo_ros_camera | Yes
-`/servicebot/camera_rear/camera_info` | Message | Calibration and resolution of the camera | [CameraInfo](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/CameraInfo.msg) | gazebo_ros_camera | Yes
-`/servicebot/camera_rear/image_raw` (or image_rect_color) | Message | Image sent by the camera | [Image](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Image.msg) | gazebo_ros_camera | Yes
-`/servicebot/cmd_vel` | Message | Velocity sent to the mobile base | [Twist](https://github.com/ros/common_msgs/blob/jade-devel/geometry_msgs/msg/Twist.msg) | gazebo_ros_diff_drive | Yes
-`/servicebot/odom` | Message | Odometry data of the robot | [Odometry](https://github.com/ros/common_msgs/blob/jade-devel/nav_msgs/msg/Odometry.msg) | gazebo_ros_diff_drive | Yes
-`/servicebot/<JOINT_NAME>_controller/command` | Message | command topic to control individual robot joints | [Float64](https://github.com/ros/std_msgs/blob/groovy-devel/msg/Float64.msg) | gazebo_ros_control | Yes
+`/servicebot/joint_states` | Message | Listen to updated position, velocity, torque of the various robot joints | [JointState](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/JointState.msg) | joint_state_controller | Yes
+`/servicebot/scan` | Message | Listen to lidar data | [LaserScan](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/LaserScan.msg) | gazebo_ros_gpu_laser | Yes
+`/servicebot/imu` | Message | Listen to IMU data | [Imu](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Imu.msg) | gazebo_ros_imu | Yes
+`/servicebot/camera_front/camera_info` | Message | Get the calibration and resolution of the camera | [CameraInfo](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/CameraInfo.msg) | gazebo_ros_camera | Yes
+`/servicebot/camera_front/image_raw` (or `image_rect_color`) | Message | Image sent by the camera | [Image](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Image.msg) | gazebo_ros_camera | Yes
+`/servicebot/camera_rear/camera_info` | Message | Get the calibration and resolution of the camera | [CameraInfo](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/CameraInfo.msg) | gazebo_ros_camera | Yes
+`/servicebot/camera_rear/image_raw` (or `image_rect_color`) | Message | Image sent by the camera | [Image](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Image.msg) | gazebo_ros_camera | Yes
+`/servicebot/cmd_vel` | Message | Send velocities to the mobile base | [Twist](https://github.com/ros/common_msgs/blob/jade-devel/geometry_msgs/msg/Twist.msg) | gazebo_ros_diff_drive | Yes
+`/servicebot/odom` | Message | Get odometry data from the robot | [Odometry](https://github.com/ros/common_msgs/blob/jade-devel/nav_msgs/msg/Odometry.msg) | gazebo_ros_diff_drive | Yes
+`/servicebot/<JOINT_NAME>_controller/command` | Message | Send commands to control individual robot joints | [Float64](https://github.com/ros/std_msgs/blob/groovy-devel/msg/Float64.msg) | gazebo_ros_control | Yes
 `/servicebot/goal` | Message | goal sent to navigation algorithm | [PoseStamped](https://github.com/ros/common_msgs/blob/jade-devel/geometry_msgs/msg/PoseStamped.msg) | | No
-`/servicebot/rfid` | Message | RFID sensor readings | [ActorNames](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/msg/ActorNames.msg) | servicesim::VicinityPlugin | Yes
-`/servicebot/initialpose` | Message | Robot's initial pose in the world | [PoseWithCovarianceStamped](https://github.com/ros/common_msgs/blob/jade-devel/geometry_msgs/msg/PoseWithCovarianceStamped.msg) | servicesim::Competition | Yes
+`/servicebot/rfid` | Message | Get RFID sensor readings | [ActorNames](https://bitbucket.org/osrf/servicesim/raw/default/servicesim_competition/msg/ActorNames.msg) | servicesim::VicinityPlugin | Yes
 
 ### Task interface
 
