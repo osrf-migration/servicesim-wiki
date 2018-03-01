@@ -41,5 +41,5 @@ How to create custom competition scenarios
 ### [Software architecture](https://bitbucket.org/osrf/servicesim/wiki/Structure)
 High-level details on how the competition software is structured
 
-### [Launch files](https://bitbucket.org/osrf/servicesim/wiki/Structure)
+### [Launch files](https://bitbucket.org/osrf/servicesim/wiki/Launch%20files)
 Usage and parameters for each launch file provided
