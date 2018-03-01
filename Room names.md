@@ -1,8 +1,20 @@
+### Service
+
 These are the names of all rooms / areas in the world. Their locations can be acquired with:
 
     rosservice call /servicesim/room_info <room_name>
 
-Names:
+### Areas
+
+According to the room, this may be inside or in front of
+it. For example, a meeting room's area is inside it, but a bathroom's area is in front of it.
+All rooms have rectangular areas which are aligned with the world.
+
+TODO: image
+
+### Names
+
+TODO: clean up
 
 ~~~
   PublicBathroomA
