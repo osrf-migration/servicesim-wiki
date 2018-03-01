@@ -1,9 +1,16 @@
-This repository currently contains 3 ROS packages:
+This repository currently contains several [ROS packages](http://wiki.ros.org/Packages):
 
 * [servicesim](https://bitbucket.org/osrf/servicesim/src/default/servicesim)
+* [servicebot_control](https://bitbucket.org/osrf/servicesim/src/default/servicebot_control)
 * [servicebot_description](https://bitbucket.org/osrf/servicesim/src/default/servicebot_description)
 * [servicesim_competition](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition)
+* [rqt_servicebot_pan_tilt](https://bitbucket.org/osrf/servicesim/src/default/servicesim_rqt_plugins/rqt_servicebot_pan_tilt)
+* [rqt_servicesim_score](https://bitbucket.org/osrf/servicesim/src/default/servicesim_rqt_plugins/rqt_servicesim_score)
+* [servicebot_2dnav](https://bitbucket.org/osrf/servicesim/src/default/competitor_example_solution/servicebot_2dnav)
+* [ servicesim_example_python_solution](https://bitbucket.org/osrf/servicesim/src/default/competitor_example_solution/competitor_example_solution)
+* [servicesim_test](https://bitbucket.org/osrf/servicesim/src/default/servicesim_test)
 
+***
 # ServiceSim
 
 [ServiceSim](https://bitbucket.org/osrf/servicesim/src/default/servicesim)
@@ -11,8 +18,7 @@ is the main entry point to run the competition. It provides a
 [ROS launch file](http://wiki.ros.org/roslaunch) which is used to spin up the
 Gazebo simulation and ROS controllers for ServiceBot.
 
-Running the following command will open a window with the simulation running
-and the robot will be ready to receive commands through the ROS interface.
+Running the following command opens a window with the simulation running, sensor visualizations, a dashboard for control, and the robot will be ready to receive commands through the ROS interface.
 
 ~~~
 roslaunch servicesim servicesim.launch
@@ -27,6 +33,7 @@ This package is meant to work as a central entry-point and doesn't provide much
 functionality itself. This way, it can be configured to spin up, for example,
 the same competition but with a different robot.
 
+***
 # ServiceSim Competition
 
 The [ServiceSim Competition](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition)
@@ -64,42 +71,27 @@ template. That is the
 [service.world.erb](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/worlds/service.world)
 file.
 
-The world generation is done using [embedded Ruby](https://en.wikipedia.org/wiki/ERuby).
-You can install Ruby 2.2 as follows:
-
-    sudo apt-get install software-properties-common python-software-properties
-    sudo apt-add-repository ppa:brightbox/ruby-ng
-    sudo apt-get update
-    sudo apt-get install ruby2.2 ruby2.2-dev
-
-And then run the following command to generate a new `service.world` from
-`service.world.erb`:
-
-~~~
-erb servicesim_competition/worlds/service.world.erb > servicesim_competition/worlds/service.world
-~~~
+The world generation is done using [embedded Ruby](https://en.wikipedia.org/wiki/ERuby) as explained on the [Scenario generation page](https://bitbucket.org/osrf/servicesim/wiki/Scenario%20generation).
 
 File `service.world.erb` and other `.erb` files in the `servicesim_competition/worlds`
 directory can be edited to add models, lights, configure human trajectories and so on.
 
 ## Gazebo plugins
 
-There will be several
+There are several
 [Gazebo plugins](http://gazebosim.org/tutorials?tut=plugins_hello_world)
 within the competition package which are used to programmatically interact with
 the simulation.
 
-These are some of the plugins which will become part of ServiceSim:
+ServiceSim provides the following plugins:
 
-* A world plugin which manages the flow of the competition and computes score
-* One plugin for each human actor which makes them follow a given trajectory
-  and stop when they approach an obstacle. The trajectory is configured on the SDF
-  file, so it can be modified each time the simulation is run.
-* One plugin for the guest so it interacts with the robot and follows it, with
-  a probability of deviating. All parameters about the guest are also configurable
-  via SDF.
+* [CompetitionPlugin](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/src/CompetitionPlugin.hh): A world plugin which manages the flow of the competition and computes score
+* [TrajectoryActorPlugin](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/src/TrajectoryActorPlugin.hh): A model plugin which is loaded for each human actor which makes them follow a given trajectory
+  and stop when they approach an obstacle. The trajectory is configured on the SDF file, so it can be modified each time the simulation is run.
+* [FollowActorPlugin](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/src/FollowActorPlugin.hh): A model plugin which is attached to the guest so it interacts with the robot and follows it, with a probability of deviating. Several parameters are also configurable via SDF.
+* [VicinityPlugin](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/src/VicinityPlugin.hh): Provides the RFID sensor functionality
 
-
+***
 # ServiceBot description
 
 The [ServiceBot description](https://bitbucket.org/osrf/servicesim/src/default/servicebot_description)
@@ -113,4 +105,3 @@ packages, see [pr2_description](http://wiki.ros.org/pr2_description) for example
 Keeping it separate from the rest of the ServiceSim software makes it convenient
 to swap ServiceSim for another robot, all that is needed is that robot's own
 description package.
-
