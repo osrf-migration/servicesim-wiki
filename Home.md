@@ -20,19 +20,22 @@ How the score is calculated
 System setup instructions
 
 ### [Walkthrough](https://bitbucket.org/osrf/servicesim/wiki/Walkthrough) 
-Step-by-step walkthrough of the competition in "god mode"
+Step-by-step walkthrough of the competition using the graphical interface or command line
 
 ### [ROS API](https://bitbucket.org/osrf/servicesim/wiki/API)
 Messages and services documentation
 
-### [Room names](https://bitbucket.org/osrf/servicesim/wiki/Room%20names)
-List of all rooms in the competition
+### [Locations](https://bitbucket.org/osrf/servicesim/wiki/Room%20names)
+Information about all the different locations on the map
 
 ### [Example solution](https://bitbucket.org/osrf/servicesim/wiki/Tutorials)
 Tutorial going through a program that has an example solution
 
 ### [Scenario generation](https://bitbucket.org/osrf/servicesim/wiki/Scenario%20generation)
 How to create custom competition scenarios
+
+### [Troubleshooting](https://bitbucket.org/osrf/servicesim/wiki/Troubleshooting)
+Answers to some common problems.
 
 ***
 ## Advanced
@@ -43,6 +46,3 @@ High-level details on how the competition software is structured
 
 ### [Launch files](https://bitbucket.org/osrf/servicesim/wiki/Launch%20files)
 Usage and parameters for each launch file provided
-
-### [Troubleshooting](https://bitbucket.org/osrf/servicesim/wiki/Troubleshooting)
-Answers to some common problems.
