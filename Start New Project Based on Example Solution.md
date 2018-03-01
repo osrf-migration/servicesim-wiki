@@ -22,7 +22,7 @@ Next you'll want to duplicate our package by downloading it from our source repo
 ```
 $ mkdir -p /tmp/temporary_clones
 $ cd /tmp/temporary_clones
-$ hg clone https://bitbucket.org/osrf/servicesim
+$ hg clone https://bitbucket.org/osrf/servicesim -b default
 $ cp -r servicesim/competitor_example_solution/servicesim_example_python_solution ~/my_servicesim_ws/src
 ```
 
