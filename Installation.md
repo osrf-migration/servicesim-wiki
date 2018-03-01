@@ -61,3 +61,7 @@ Installation instructions for Ubuntu Xenial (16.04)
 
         . /opt/ros/kinetic/setup.bash
         roslaunch servicesim servicesim.launch
+
+## Next
+
+Check the [Walkthrough page](https://bitbucket.org/osrf/servicesim/wiki/Walkthrough) for step-by-step instructions on how to interact with the competition
