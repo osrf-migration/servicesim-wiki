@@ -7,7 +7,7 @@ This repository currently contains several [ROS packages](http://wiki.ros.org/Pa
 * [rqt_servicebot_pan_tilt](https://bitbucket.org/osrf/servicesim/src/default/servicesim_rqt_plugins/rqt_servicebot_pan_tilt)
 * [rqt_servicesim_score](https://bitbucket.org/osrf/servicesim/src/default/servicesim_rqt_plugins/rqt_servicesim_score)
 * [servicebot_2dnav](https://bitbucket.org/osrf/servicesim/src/default/competitor_example_solution/servicebot_2dnav)
-* [ servicesim_example_python_solution](https://bitbucket.org/osrf/servicesim/src/default/competitor_example_solution/competitor_example_solution)
+* [servicesim_example_python_solution](https://bitbucket.org/osrf/servicesim/src/default/competitor_example_solution/competitor_example_solution)
 * [servicesim_test](https://bitbucket.org/osrf/servicesim/src/default/servicesim_test)
 
 ***
@@ -97,7 +97,7 @@ ServiceSim provides the following plugins:
 The [ServiceBot description](https://bitbucket.org/osrf/servicesim/src/default/servicebot_description)
 package contains the
 [URDF](http://wiki.ros.org/urdf) model of ServiceBot. This package describes the robot's
-geometry, kinematics and dynamics.
+geometry, kinematics and dynamics. It also loads the out-of-the-box [DifferentialDriveController](http://gazebosim.org/tutorials?tut=ros_gzplugins&cat=connect_ros#DifferentialDrive).
 
 It is common for robot descriptions to be in their own `_description`
 packages, see [pr2_description](http://wiki.ros.org/pr2_description) for example.
@@ -105,3 +105,31 @@ packages, see [pr2_description](http://wiki.ros.org/pr2_description) for example
 Keeping it separate from the rest of the ServiceSim software makes it convenient
 to swap ServiceSim for another robot, all that is needed is that robot's own
 description package.
+
+***
+# ServiceBot control
+
+The [ServiceBot control](https://bitbucket.org/osrf/servicesim/src/default/servicebot_control)
+package provides an interface to control the robot's joints.
+
+***
+# Custom RQT plugins (pan-tilt and score)
+
+Package [rqt_servicebot_pan_tilt](https://bitbucket.org/osrf/servicesim/src/default/servicesim_rqt_plugins/rqt_servicebot_pan_tilt) provides the graphical widget to control the robot head joints.
+
+Package [rqt_servicesim_score](https://bitbucket.org/osrf/servicesim/src/default/servicesim_rqt_plugins/rqt_servicesim_score) provides a widget to display the score on RQT.
+
+***
+# ServiceBot 2D Navigation
+
+The [ServiceBot 2d Navigation](https://bitbucket.org/osrf/servicesim/src/default/competitor_example_solution/servicebot_2dnav) package leverages the ROS Navigation stack to make ServiceBot localize and do path planning in the world.
+
+***
+# ServiceSim example python solution
+
+The [ServiceSim example python solution](https://bitbucket.org/osrf/servicesim/src/default/competitor_example_solution/competitor_example_solution) package serves as an example of how a competitor would solve the competition tasks.
+
+***
+# ServiceSim test
+
+The [ServiceSim test](https://bitbucket.org/osrf/servicesim/src/default/servicesim_test) package uses the [ROS test suite](http://wiki.ros.org/rostest) to test the competition software and is tied to the [continuous integration](https://build.osrfoundation.org/view/proj_servicesim/) to ensure that new functionality doesn't break behaviour.
