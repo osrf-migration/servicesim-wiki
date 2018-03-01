@@ -2,7 +2,7 @@ Before we describe the contents of the solution, we'll first describe in this tu
 
 ### Overview
 
-In order to setup your own local working copy of our example you'll need a "catkin workspace" in which to build it and you'll need to download a copy of it which you can edit.
+In order to setup your own local working copy of our example you'll need a "[catkin workspace](http://wiki.ros.org/catkin/workspaces)" in which to build it and you'll need to download a copy of it which you can edit.
 
 ### Setting Up a Local Catkin Workspace
 
@@ -26,7 +26,11 @@ $ hg clone https://bitbucket.org/osrf/servicesim
 $ cp -r servicesim/competitor_example_solution/servicesim_example_python_solution ~/my_servicesim_ws/src
 ```
 
-After that you can delete the temporary clone of our repository.
+After that you can delete the temporary clone of our repository with
+
+```
+$ rm -rf /tmp/temporary_clones
+```
 
 ### Renaming the Example
 
