@@ -34,6 +34,8 @@ Parameters used to randomly generate guest drift times
 
 ## scoring ##
 
+See the [Scoring page](https://bitbucket.org/osrf/servicesim/wiki/Scoring) for more details on scoring.
+
 This section specifies the various penalties and priorities that define the score when the robot performs the tasks. The weights define the severity of these penalties, for example, the weight of the penalty when the robot collides with a human can be greater than the weight of the penalty when the robot collides with an object. Here are the configurable weights:
 
 * `weight_human_contact`: The penalty weight when the robot comes in contact with a human. 
