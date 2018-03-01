@@ -18,7 +18,7 @@ Bathroom | 3 x 1.5 m, always without obstacles, outside of room | Within area's 
 Public cubicles (island) | 3 x 3 m, includes the desk and chair | Near area's outer corner
 Public cubicles (corners) | 3 x 2 m, always without obstacles | Close to area's outer edge
 Front / back / private cafe areas | minimum 2.25 x 2.25 m, always without obstacles | Within area, padding = 1.0 m
-Private cubicles | 1.8 x 1.5 m, always without obstacles, outside of cubicle 	Within area's center line
+Private cubicles | 1.8 x 1.5 m, always without obstacles, outside of cubicle | Within area's center line
 
 ![idleareas_70.png](https://bitbucket.org/repo/gkR8znK/images/1314042663-idleareas_70.png)
 
