@@ -59,4 +59,5 @@ Installation instructions for Ubuntu Xenial (16.04)
 
     Check installation worked by launching the servicesim example world:
 
+        . /opt/ros/kinetic/setup.bash
         roslaunch servicesim servicesim.launch
