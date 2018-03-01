@@ -50,7 +50,7 @@ The script downloaded a local copy of `config.yaml` for you, you can check its c
 
     cat ~/servicesim_worlds/config.yaml
 
-That file exposes several parameters to configure the competition scenario, such as the target rooms, the guest identity and configuration for guest drift.
+That file exposes several parameters to configure the competition scenario, such as the target rooms, the guest identity and configuration for guest drift. Check the parameters that can be changed in `config.yaml` file [here](https://bitbucket.org/osrf/servicesim/wiki/Configuration%20-%20config.yaml)
 
 Try changing the `targets: robot_start` property to `BackEntrance` and run the following to generate a new scenario:
 
