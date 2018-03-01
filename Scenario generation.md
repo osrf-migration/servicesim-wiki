@@ -52,15 +52,19 @@ The script downloaded a local copy of `config.yaml` for you, you can check its c
 
 That file exposes several parameters to configure the competition scenario, such as the target rooms, the guest identity and configuration for guest drift. Check the parameters that can be changed in `config.yaml` file [here](https://bitbucket.org/osrf/servicesim/wiki/Configuration%20-%20config.yaml)
 
-Try changing the `targets: robot_start` property to `BackEntrance` and run the following to generate a new scenario:
+Let's change the robot start location. First, open the config file:
+
+    gedit config.yaml
+
+Change the `targets: robot_start` property to `BackEntrance`, save and close.
+
+Now run the following to generate a new scenario based on the new config:
 
     bash scenario.bash -p back_entrance
 
 Now use that scenario and see how the robot starts near the back entrance:
 
     roslaunch servicesim servicesim.launch custom:=true custom_prefix:=/home/<user>/servicesim_worlds/back_entrance
-
-If you delete or comment out options in the file, the template will pick them randomly.
 
 ## Advanced use
 
