@@ -74,7 +74,8 @@ The response will contain:
 You'll see a message like the following on your terminal:
 
     [Msg] [ServiceSim] Started Checkpoint "Go to pick-up location" at 00:00:10.536
-    [Msg] Started contain plugin [servicesim/go_to_pick_up]
+
+You should also see that the score starts increasing.
 
 ***
 ### 4. Get room info
@@ -102,19 +103,37 @@ the room's pick-up/drop-off area. See [this page](https://bitbucket.org/osrf/ser
 ***
 ### 5. Checkpoint 1: Go to pick-up
 
-The first checkpoint consists of navigating the robot to the pick-up location.
+The first checkpoint consists of navigating the robot to the pick-up location. In our case, this is the `FrontElevator`.
+
+For this walkthrough, there are a few ways you can move the robot there:
+
+#### A. Using the keyboard teleoperation
+
+1. Click on the terminal from which you ran `roslaunch` to make sure it has focus
+1. Use the keyboard as described on the terminal to steer the robot around the world
+
+#### B. Using the RQT dashboard
+
+You can use the "Robot Steering" widget to control the robot:
+
+![ss7.png](https://bitbucket.org/repo/gkR8znK/images/1388713375-ss7.png)
+
+#### C. Moving the robot on Gazebo
+
+For quick testing, you could also use the translation tool on Gazebo to teleport the robot to the `FrontElevator` area:
+
+![ss8.gif](https://bitbucket.org/repo/gkR8znK/images/986763748-ss8.gif)
 
 Once the robot has reached the correct location, you'll see the following on
 the terminal:
 
-    [Msg] Stopped contain plugin [servicesim/go_to_pick_up]
     [Msg] [ServiceSim] Checkpoint "Go to pick-up location" complete
     [Msg] [ServiceSim] Started Checkpoint "Pick-up guest" at 00:00:11.730
 
 ***
 ### 6. Checkpoint 2: Pick-up
 
-For this checkpoint, it is convenient to use the RFID sensor to localize the guest. On a terminal you can listen to the sensor topic:
+For this checkpoint, it is convenient to use the robot's RFID sensor to localize the guest. On a terminal you can listen to the sensor topic:
 
     rostopic echo /servicebot/rfid
 
@@ -139,7 +158,6 @@ Reasons the request could fail:
 
 If the pick-up request is successful, you'll see messages like these:
 
-    [Msg] Actor [guest] is following model [servicebot]
     [Msg] [ServiceSim] Checkpoint "Pick-up guest" complete
     [Msg] [ServiceSim] Started Checkpoint "Drop-off guest" at 00:01:33.467
 
@@ -171,10 +189,8 @@ Reasons the request could fail:
 
 If the drop-off request is successful, you'll see this message:
 
-    [Msg] Actor [guest] stopped following model [servicebot]
     [Msg] [ServiceSim] Checkpoint "Drop-off guest" complete
     [Msg] [ServiceSim] Started Checkpoint "Return to start" at 00:02:00.862
-    [Msg] Started contain plugin [servicesim/return_to_start]
 
 ***
 ### 8. Checkpoint 4: Return to start
@@ -184,7 +200,6 @@ Return to the room where the robot started the competition from.
 Once the robot has reached the correct location, you'll see the following on
 the terminal:
 
-    [Msg] Stopped contain plugin [servicesim/return_to_start]
     [Msg] [ServiceSim] Competition complete!
 
 
