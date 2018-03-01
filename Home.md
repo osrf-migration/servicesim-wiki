@@ -28,7 +28,7 @@ Messages and services documentation
 ### [Room names](https://bitbucket.org/osrf/servicesim/wiki/Room%20names)
 List of all rooms in the competition
 
-### [Example solution](https://bitbucket.org/osrf/servicesim/wiki/https://bitbucket.org/osrf/servicesim/wiki/Running%20Example%20Solution)
+### [Example solution](https://bitbucket.org/osrf/servicesim/wiki/Tutorials)
 Tutorial going through a program that has an example solution
 
 ### [Scenario generation](https://bitbucket.org/osrf/servicesim/wiki/Scenario%20generation)
