@@ -1,53 +1,65 @@
-The config.yaml file contains the parameters to configure the scenario, The following are the parameters that can be modified:
+The [config.yaml](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/worlds/config.yaml) file contains parameters to configure a unique competition scenario.
 
-## targets: ##
+The following are the parameters that can be modified. Parameters left empty will be randomized unless a default value is specified.
 
-1.`robot_start`: This specifies the starting position of the robot, for example: `PrivateCafe`.
+## targets ##
 
-2.`pick_up`: This specifies the pickup location of the guest, for example: `FrontElevator`. 
+Target configuration. See the [full list](https://bitbucket.org/osrf/servicesim/wiki/Room%20names) of location names.
 
-3.`drop_off`: This specifies the drop-off location of the guest, for example: `PrivateCubicle_31_3` 
+* `pick_up`: The pick-up location of the guest, for example: `FrontElevator`. 
 
-## guest: ##
+* `drop_off`: The drop-off location of the guest, for example: `PrivateCubicle_31_3` 
 
-`skin`: This specifies the guest's appearance. for example: `SKIN_man_blue_shirt.dae` 
+* `robot_start`: The starting location of the robot, for example: `PrivateCafe`.
 
-## drift: ##
+* `robot_start_yaw`: The starting yaw of the robot (zero is looking at +X)
 
-1.`min_interval`: This specifies the minimum time in seconds between the guest drifts, for example: `15`
+## guest ##
 
-2.`max_interval`: This specifies the maximum time in seconds between the guest drifts, for example: `300`
+Configurations of the guest to be picked up.
 
-3.`count`: This specifies the total number of drifts, for example: `30`
+* `skin`: The guest's appearance, which is a `SKIN` file from [here](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/models/actor/meshes/), for example: `SKIN_man_blue_shirt.dae` 
 
-## scoring: ##
+## drift ##
 
-This section specifies the various penalties and priorities that define the score when the robot performs the tasks. The weights define the severity of these penalties, for example, the weight of penalty when the robot collides with a human can be greater than the weight of penalty when the robot collides with an object. Here are the configurable weights:
+Parameters used to randomly generate guest drift times
 
-1.`weight_human_contact`: This specifies the penalty weight when the robot comes in contact with a human. 
+* `min_interval`: The minimum time in seconds between the guest drifts for example: `15`
 
-2.`weight_object_contact`: This specifies the penalty weight when the robot comes in contact with an object.
+* `max_interval`: The maximum time in seconds between the guest drifts for example: `300`
 
-3.`weight_human_approximation`: This specifies the penalty weight when the robot comes close to a human but not touching it. 
+* `start_time`: Before this time (in seconds), no drifts are generated
 
-4.`weight_object_approximation`: This specifies the penalty weight when the robot comes close to an object but not touching it.
+* `count`: The total number of drifts, for example: `30`
 
-5.`weight_pickup_location`: This specifies the weight for the time taken by the robot to reach the pickup location. 
+## scoring ##
 
-6.`weight_pickup_guest`: This specifies the weight for the time taken by the robot to pick up the guest after reaching the pickup location.  
+This section specifies the various penalties and priorities that define the score when the robot performs the tasks. The weights define the severity of these penalties, for example, the weight of the penalty when the robot collides with a human can be greater than the weight of the penalty when the robot collides with an object. Here are the configurable weights:
 
-7.`weight_drop_off_guest`: This specifies the weight for the time taken by the robot to drop-off the guest at the drop-off location.  
+* `weight_human_contact`: The penalty weight when the robot comes in contact with a human. 
 
-8.`weight_return_start`: This specifies the weight for the time taken by the robot to go back to its start position.
+* `weight_object_contact`: The penalty weight when the robot comes in contact with an object.
 
-9.`weight_failed_pickup`: This is a constant penalty when the guest pickup failed. 
+* `weight_human_approximation`: The penalty weight when the robot comes close to a human but not touching it. 
 
-10.`weight_failed_drop_off`: This is a constant penalty when the guest drop-off failed.  
+* `weight_object_approximation`: The penalty weight when the robot comes close to an object but not touching it.
 
-11.`weight_too_fast`: This a constant penalty when the robot moves too fast away from the guest after it has picked up the guest. 
+* `weight_pickup_location`: The weight for the time taken by the robot to reach the pickup location. 
 
-## humans: ##
+* `weight_pickup_guest`: The weight for the time taken by the robot to pick up the guest after reaching the pickup location.  
 
-1.`walking_count`: This specifies the number of people that are walking the office.
+* `weight_drop_off_guest`: The weight for the time taken by the robot to drop-off the guest at the drop-off location.  
 
-2.`idiling_count`: This specifies the number of people that are idle/not-walking in the office.
+* `weight_return_start`: The weight for the time taken by the robot to go back to its start position.
+
+* `weight_failed_pickup`: This is a constant penalty when the guest pickup failed. 
+
+* `weight_failed_drop_off`: This is a constant penalty when the guest drop-off failed.  
+
+* `weight_too_fast`: This a constant penalty when the robot moves too fast away from the guest after it has picked up the guest. 
+
+## humans ##
+
+* `walking_count`: The number of people that are walking in the office.
+
+* `idiling_count`: The number of people that are idle/not-walking in the office.
