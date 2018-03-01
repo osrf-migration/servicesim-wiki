@@ -29,14 +29,6 @@ Private cubicles | 1.8 x 1.5 m, always without obstacles, outside of cubicle | W
 * **green**: target area's maximum point
 * **orange**: point within an area where robot or guest is spawned
 
-
-***
-### Service
-
-These are the names of all rooms / areas in the world. Their locations can be acquired with:
-
-    rosservice call /servicesim/room_info <room_name>
-
 ***
 ### Room names
 
@@ -116,3 +108,13 @@ Areas to the left of the map are within a private area and prefixed with `Privat
   FrontCouchA
   FrontCouchB
 ~~~
+
+***
+### Service
+
+The coordinates of any area in the world can be acquired with the [room info service](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/srv/RoomInfo.srv) as follows:
+
+    rosservice call /servicesim/room_info <name>
+
+The response will contain the XYZ world coordinates of the minimum and maximum corners of
+the room's pick-up/drop-off area.
