@@ -11,6 +11,8 @@ Before doing this tutorial you need to have installed `servicesim` from the debi
 Before running the solution, we need to start the competition:
 
 ```
+# in a new terminal
+$ source /opt/ros/kinetic/setup.bash
 $ roslaunch servicesim servicesim.launch rviz:=false teleop:=false
 ```
 
@@ -21,6 +23,8 @@ This will launch `gazebo` and the `rqt` dashboard, but it prevents the keyboard 
 Once the competition software has started, we can run the example competition solution:
 
 ```
+# in a new terminal
+$ source /opt/ros/kinetic/setup.bash
 $ roslaunch servicesim_example_python_solution example_solution.launch
 ```
 
