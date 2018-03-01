@@ -4,6 +4,7 @@ ServiceSim ships with an example scenario ready to be used, but it also provides
 
 A scenario is defined by a combination `.world` and `.launch` files. The following explains how to generate new files based on a [config.yaml](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/worlds/config.yaml) file.
 
+***
 ## Quick start
 
 Follow these steps to locally generate and use a scenario.
@@ -43,7 +44,7 @@ Follow these steps to locally generate and use a scenario.
         roslaunch servicesim servicesim.launch custom:=true custom_prefix:=/home/<user>/servicesim_worlds/my_scenario
 
 
-
+***
 ## Editing the configuration
 
 The script downloaded a local copy of `config.yaml` for you, you can check its contents with:
@@ -66,6 +67,7 @@ Now use that scenario and see how the robot starts near the back entrance:
 
     roslaunch servicesim servicesim.launch custom:=true custom_prefix:=/home/<user>/servicesim_worlds/back_entrance
 
+***
 ## Advanced use
 
 The `scenario.bash` script is calling the [service.world.erb](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/worlds/service.world.erb) template. It accepts the following options:
@@ -84,3 +86,8 @@ For example, fix the seed at 100 and generate debug visuals:
 You can get the same result with `scenario.bash` as follows:
 
     bash scenario.bash -t debug_100 -args "s=100 d=true"
+
+***
+## Next
+
+See all the parameters which can be configured in the yaml file on [this page](https://bitbucket.org/osrf/servicesim/wiki/Configuration%20-%20config.yaml).
