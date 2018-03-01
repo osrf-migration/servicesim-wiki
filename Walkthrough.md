@@ -190,7 +190,7 @@ Once the destination has been reached, use the
 [guest drop-off service](https://bitbucket.org/osrf/servicesim/src/default/servicesim_competition/srv/DropOffGuest.srv),
 for example:
 
-    rosservice call /servicesim/dropoff_guest guest
+    rosservice call /servicesim/dropoff_guest human_86138
 
 Where the argument is the guest name.
 
