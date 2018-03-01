@@ -51,4 +51,5 @@ Interface name | Topic / Service / Action | Description | Message definition | G
 
 Interface name | Topic / Service / Action | Description | Message definition | Gazebo plugin used | Implemented?
 ---------- | ----------------- | ----------- | ------------------ | ------------------ | -----------
-`/servicebot/camera_front/segmented_image` | Message | Image after application of a color mask | [Image](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Image.msg) | gazebo_ros_camera | Yes
+`/servicebot/camera_front/segmented_image` | Message | Image after application of a color mask | [Image](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Image.msg) | `/servicebot/camera_front/segmented_image` | Message | Image after application of a color mask | [Image](https://github.com/ros/common_msgs/blob/jade-devel/sensor_msgs/msg/Image.msg) | servicesim_example_python_solution::image_processing_example.py | Yes
+ | Yes
