@@ -88,6 +88,29 @@ Remember to source this local install for every new terminal you open, otherwise
 
       . ~/ws/install_isolated/setup.bash
 
+# Updating existing installation
+
+A. From source
+
+    cd ~/ws/src/servicesim
+    hg pull
+    hg up default
+    cd ../..
+    . /opt/ros/kinetic/setup.sh
+    rosdep install --from-paths src --ignore-src --skip-keys gazebo --skip-keys libgazebo7-dev -r -y
+    catkin_make_isolated --install
+
+B. From debian packages
+
+    sudo apt update
+    sudo apt install -y ros-kinetic-servicebot-2dnav\
+                        ros-kinetic-servicesim-competition\
+                        ros-kinetic-servicebot-control\
+                        ros-kinetic-servicesim-example-python-solution\
+                        ros-kinetic-servicebot-description\
+                        ros-kinetic-service-tools\
+                        ros-kinetic-servicesim
+
 ## Next
 
 Check the [Walkthrough page](https://bitbucket.org/osrf/servicesim/wiki/Walkthrough) for step-by-step instructions on how to interact with the competition
