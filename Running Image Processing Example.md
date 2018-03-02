@@ -23,9 +23,11 @@ Once the competition software has started, we can run the example competition so
 ### Observe the Solution
 
 While the solution is running, you can use the dashboard to observe the image the robot camera sends and the processed image. To do so you can hit the refresh button and select the `/servicebot/camera_front/segmented_image` topic in the drop down list of the image viewer.
-TODO: add screenshot of topic selection here
+![select_segmented.png](https://bitbucket.org/repo/gkR8znK/images/2203909894-select_segmented.png)
 
-TODO: add screenshot of the demo with segmentation displayed
+We can now visualize the results:
+
+![blue_pixels_only_cropped.png](https://bitbucket.org/repo/gkR8znK/images/3803119328-blue_pixels_only_cropped.png)
 
 ### Next Tutorial
 
