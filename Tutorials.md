@@ -1,3 +1,5 @@
 * [Running Example Solution](https://bitbucket.org/osrf/servicesim/wiki/Running%20Example%20Solution)
 * [Start New Project Based on Example Solution](https://bitbucket.org/osrf/servicesim/wiki/Start%20New%20Project%20Based%20on%20Example%20Solution)
 * [Understanding the Example Solution](http://wiki.ros.org/servicesim/Tutorials/UnderstandingTheExampleSolution)
+* [Running the Image Processing Example](https://bitbucket.org/osrf/servicesim/wiki/Running%20Image%20Processing%20Example)
+* [Understanding Image Processing Example](http://wiki.ros.org/servicesim/Tutorials/UnderstandingTheImageProcessingExample)
