@@ -99,7 +99,8 @@ B. From debian packages
 
     sudo apt update
     sudo apt install -y ros-kinetic-servicebot*\
-                        ros-kinetic-servicesim*
+                        ros-kinetic-servicesim*\
+                        gazebo8 libgazebo8-dev
 
 ## Next
 
