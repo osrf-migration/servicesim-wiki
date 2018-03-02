@@ -49,13 +49,8 @@ Installation instructions for Ubuntu Xenial (16.04)
 
     Install all the packages provided by ServiceSim as follows:
 
-        sudo apt install -y ros-kinetic-servicebot-2dnav\
-                            ros-kinetic-servicesim-competition\
-                            ros-kinetic-servicebot-control\
-                            ros-kinetic-servicesim-example-python-solution\
-                            ros-kinetic-servicebot-description\
-                            ros-kinetic-service-tools\
-                            ros-kinetic-servicesim
+        sudo apt install -y ros-kinetic-servicebot*\
+                            ros-kinetic-servicesim*
 
     Check installation worked by launching the example world:
 
@@ -103,13 +98,8 @@ A. From source
 B. From debian packages
 
     sudo apt update
-    sudo apt install -y ros-kinetic-servicebot-2dnav\
-                        ros-kinetic-servicesim-competition\
-                        ros-kinetic-servicebot-control\
-                        ros-kinetic-servicesim-example-python-solution\
-                        ros-kinetic-servicebot-description\
-                        ros-kinetic-service-tools\
-                        ros-kinetic-servicesim
+    sudo apt install -y ros-kinetic-servicebot*\
+                        ros-kinetic-servicesim*
 
 ## Next
 
