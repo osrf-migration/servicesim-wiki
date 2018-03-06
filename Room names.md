@@ -118,3 +118,25 @@ The coordinates of any area in the world can be acquired with the [room info ser
 
 The response will contain the XYZ world coordinates of the minimum and maximum corners of
 the room's pick-up/drop-off area.
+
+
+***
+## Find out a location name on the 3D view
+
+Most rooms have a corresponding model inside the simulation. So if you click on the room in the 3D view, its name will be selected on the world tree.
+
+![servicesimroomnames.gif](https://bitbucket.org/repo/gkR8znK/images/1520172961-servicesimroomnames.gif)
+
+Some other locations, such as cubicles, are grouped into a single model. As shown above, the model will give you the prefix of the cubicle's name, but not the final index.
+
+One way of visually inspecting all the locations is to create a debug map of the world as described on the [Advanced section of the Scenario generation page](https://bitbucket.org/osrf/servicesim/wiki/Scenario%20generation), i.e.:
+
+    erb s=100 d=true urdf_launch=debug_100.launch service.world.erb > debug_100.world
+
+Then run the custom world:
+
+    roslaunch servicesim servicesim.launch custom:=true custom_prefix:=/home/<user>/servicesim_worlds/debug_100
+
+You can click the debug visuals to see their names:
+
+![servicesimdebugnames.gif](https://bitbucket.org/repo/gkR8znK/images/2140413435-servicesimdebugnames.gif)
