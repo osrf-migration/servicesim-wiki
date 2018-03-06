@@ -22,6 +22,9 @@ System setup instructions
 ### [Walkthrough](https://bitbucket.org/osrf/servicesim/wiki/Walkthrough) 
 Step-by-step walkthrough of the competition using the graphical interface or command line
 
+### [Use the navigation stack](https://bitbucket.org/osrf/servicesim/wiki/Use%20Navigation)
+How to use ServiceBot's navigation stack and manually send goals
+
 ### [ROS API](https://bitbucket.org/osrf/servicesim/wiki/API)
 Messages and services documentation
 
