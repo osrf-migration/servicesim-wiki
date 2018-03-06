@@ -169,8 +169,18 @@ There are a few reasons the request could fail, which will be printed on the ter
 
 * Wrong guest name used
 * Wrong robot name used
+
+        [Wrn] [FollowActorPlugin.cc:385] Failed to find model: [badrobotname]
+        [Msg] [ServiceSim] 40 penalty: failed pick-up
+
 * Robot too far from guest
+
+        [Wrn] [FollowActorPlugin.cc:398] Target [servicebot] too far from actor [human_86138]
+        [Msg] [ServiceSim] 40 penalty: failed pick-up
+
 * Not yet on this checkpoint
+
+        [Msg] [ServiceSim] 40 penalty: pick-up attempt before reaching checkpoint
 
 If the pick-up request is successful, you'll see messages like these:
 
@@ -198,6 +208,9 @@ Reasons the request could fail:
 
 * Wrong guest name used
 * Guest is not in the drop-off location (make sure the guest themselves are inside the min/max coordinates given by the  `room_info` service)
+
+        [Msg] [ServiceSim] 50 penalty: guest not in drop-off area
+
 * Not yet on this checkpoint
 
 If the drop-off request is successful, you'll see this message:
