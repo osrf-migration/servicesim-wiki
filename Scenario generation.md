@@ -83,10 +83,6 @@ For example, fix the seed at 100 and generate debug visuals:
 
     erb s=100 d=true urdf_launch=debug_100.launch service.world.erb > debug_100.world
 
-You can get the same result with `scenario.bash` as follows:
-
-    bash scenario.bash -t debug_100 -args "s=100 d=true"
-
 ***
 ## Next
 
