@@ -105,7 +105,7 @@ the room's pick-up/drop-off area. See [this page](https://bitbucket.org/osrf/ser
 
 The first checkpoint consists of navigating the robot to the pick-up location. In our case, this is the `FrontElevator`.
 
-For this walkthrough, there are a few ways you can move the robot there:
+During an automated competition, the robot would be programmatically navigated using a program such as the [example solution](https://bitbucket.org/osrf/servicesim/wiki/Running%20Example%20Solution). For this walkthrough, there are a few ways you can move the robot:
 
 #### A. Using the keyboard teleoperation
 
@@ -125,7 +125,7 @@ For quick testing, you could also use the translation tool on Gazebo to teleport
 ![ss8.gif](https://bitbucket.org/repo/gkR8znK/images/986763748-ss8.gif)
 
 
-#### D. Using the ROS navigation stack
+#### D. Manually using the ROS navigation stack
 
 You can use ServiceBot's navigation stack to send position goals to the robot by clicking on a map. See the [Use navigation page](https://bitbucket.org/osrf/servicesim/wiki/Use%20Navigation) for details.
 
