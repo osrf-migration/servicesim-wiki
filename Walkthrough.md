@@ -124,6 +124,11 @@ For quick testing, you could also use the translation tool on Gazebo to teleport
 
 ![ss8.gif](https://bitbucket.org/repo/gkR8znK/images/986763748-ss8.gif)
 
+
+#### D. Using the ROS navigation stack
+
+You can use ServiceBot's navigation stack to send position goals to the robot by clicking on a map. See the [Use navigation page](https://bitbucket.org/osrf/servicesim/wiki/Use%20Navigation) for details.
+
 Once the robot has reached the correct location, you'll see the following on
 the terminal:
 
