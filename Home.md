@@ -34,8 +34,11 @@ Tutorial going through a program that has an example solution
 ### [Scenario generation](https://bitbucket.org/osrf/servicesim/wiki/Scenario%20generation)
 How to create custom competition scenarios
 
+### [Tips and tricks](https://bitbucket.org/osrf/servicesim/wiki/Tips%20and%20tricks)
+Useful tips when dealing with the simulation
+
 ### [Troubleshooting](https://bitbucket.org/osrf/servicesim/wiki/Troubleshooting)
-Answers to some common problems.
+Answers to some common problems
 
 ***
 ## Advanced
