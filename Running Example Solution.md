@@ -34,7 +34,7 @@ While the solution is running, you can observe the robot and humans moving in th
 
 On RViz, you will see what the navigation stack is computing over time. There are the local and global cost maps, pose, plan and cost cloud.
 
-On the terminal, you can see updates printed by the state machine as it progresses through the competition, such as its current state, the RFID sensor readins and so on, for example:
+On the terminal, you can see updates printed by the state machine as it progresses through the competition, such as its current state, the RFID sensor readings and so on, for example:
 
 ~~~
 [INFO] [1519942333.781666, 8.236000]: In Pickup state
