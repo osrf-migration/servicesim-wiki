@@ -71,6 +71,10 @@ The response will contain:
 * The guest's identity, which matches their RFID sensor reading
 * The robot's start pose in world coordinates
 
+If you need to access the task information in the future, you can call the task info service as follows:
+
+    rosservice call /servicesim/task_info
+
 You'll see a message like the following on your terminal:
 
     [Msg] [ServiceSim] Started Checkpoint "Go to pick-up location" at 00:00:10.536
