@@ -26,13 +26,13 @@ This page explains how to use a robot other than ServiceBot in ServiceSim.
         cd ../..
         catkin_make_isolated --install
 
-   Take a look at the description file's `launch` directory. There should be a `.launch`
-   file there which, at a minimum, sets the `robot_description` parameter. I our case,
-   that is:
+    Take a look at the description package's `launch` directory. There should be a `.launch`
+    file there which, at a minimum, sets the `robot_description` parameter. I our case,
+    that is:
 
-       src/segway_v3/segway_description/launch/description.launch
+        src/segway_v3/segway_description/launch/description.launch
 
-1. Create a new launch file
+1. Create a new competition launch file
 
     Create a new `servicesim_segway.launch` file:
 
@@ -61,13 +61,13 @@ This page explains how to use a robot other than ServiceBot in ServiceSim.
 
         </launch>
 
-    This file will:
+    This will:
 
     * Launch Gazebo running the competition software
     * Launch the `segway_description` file
     * Spawn the `segway` model into the world
 
-    It will not:
+    This will not:
 
     * Launch any controllers for the robot
     * Work with the example solution
