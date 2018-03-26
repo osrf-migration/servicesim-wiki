@@ -83,7 +83,3 @@ This page explains how to use a robot other than ServiceBot in ServiceSim.
         roslaunch servicesim servicesim_segway.launch
 
     You'll see the Segway inside Gazebo:
-
-
-
-
