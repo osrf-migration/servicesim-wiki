@@ -1,0 +1,89 @@
+# Using a different robot
+
+This page explains how to use a robot other than ServiceBot in ServiceSim.
+
+1. Build ServiceSim from source
+
+    Follow the install from source instructions on the [Installation page](Installation.md).
+
+1. Choose a robot
+
+    Choose the robot you want to use, in our example we'll use the Segway RMP210.
+
+    Make sure the robot you choose has a URDF description package, in our case, it is located here:
+
+    https://github.com/StanleyInnovation/segway_v3/tree/master/segway_description
+
+1. Install the robot description
+
+    For simplicity, let's add the robot description into the ServiceSim
+    workspace so everything can be installed with the same command:
+
+        cd ~/ws/src
+        git clone https://github.com/StanleyInnovation/segway_v3
+        cd segway_v3
+        rm -rf !(segway_description)
+        cd ../..
+        catkin_make_isolated --install
+
+   Take a look at the description file's `launch` directory. There should be a `.launch`
+   file there which, at a minimum, sets the `robot_description` parameter. I our case,
+   that is:
+
+       src/segway_v3/segway_description/launch/description.launch
+
+1. Create a new launch file
+
+    Create a new `servicesim_segway.launch` file:
+
+        gedit src/servicesim/servicesim/launch/servicesim_segway.launch
+
+    And put the following contents:
+
+        <launch>
+
+          <arg name="robot" default="true" />
+          <arg name="custom" default="false" />
+          <arg name="custom_prefix" default="" />
+
+          <include file="$(find segway_description)/launch/description.launch" />
+
+          <include file="$(find servicesim_competition)/launch/competition.launch">
+            <arg name="custom" value="$(arg custom)"/>
+            <arg name="custom_prefix" value="$(arg custom_prefix)"/>
+          </include>
+
+          <group if="$(arg robot)">
+            <arg if="$(arg custom)" name="launch_file" default="$(arg custom_prefix).launch" />
+            <arg unless="$(arg custom)" name="launch_file" value="$(find servicesim)/launch/spawn_urdf.launch"/>
+            <include file="$(arg launch_file)" />
+          </group>
+
+        </launch>
+
+    This file will:
+
+    * Launch Gazebo running the competition software
+    * Launch the `segway_description` file
+    * Spawn the `segway` model into the world
+
+    It will not:
+
+    * Launch any controllers for the robot
+    * Work with the example solution
+
+1. Install and run
+
+    Build and install as usual:
+
+        catkin_make_isolated --install
+
+    Launch the new competition file:
+
+        roslaunch servicesim servicesim_segway.launch
+
+    You'll see the Segway inside Gazebo:
+
+
+
+
