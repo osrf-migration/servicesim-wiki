@@ -82,4 +82,28 @@ This page explains how to use a robot other than ServiceBot in ServiceSim.
 
         roslaunch servicesim servicesim_segway.launch
 
-    You'll see the Segway inside Gazebo:
+    You'll see the Segway inside the competition instead of ServiceBot:
+
+    ![segway2.png](https://bitbucket.org/repo/gkR8znK/images/2528540155-segway2.png)
+
+    The Segway meshes don't have nice textures, so we can turn on transparency
+    and joint visuals to inspect that it was correctly loaded:
+
+    ![segway1.png](https://bitbucket.org/repo/gkR8znK/images/1039098822-segway1.png)
+
+1. Test the competition
+
+    You can follow the instructions on the [Walkthrough page](Walkthrough.md) and check
+    that the competition logic is working.
+
+    Since this example doesn't load any controllers for the robot, this can be tested
+    in "god mode" by teleporting the robot inside Gazebo.
+
+    Try using the command line to ask for a new task, pick-up and drop the guest.
+
+1. (Optional) Change robot name
+
+    You can see that the Segway is called `servicebot` in the simulation. If it's
+    desired to change the robot's name, you can change the `robot: name` property
+    on the `config.yaml` file and then generate a custom scenario as described on
+    the [Scenario generation page](Scenario generation.md).
