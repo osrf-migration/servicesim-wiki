@@ -37,17 +37,37 @@ On RViz, you will see what the navigation stack is computing over time. There ar
 On the terminal, you can see updates printed by the state machine as it progresses through the competition, such as its current state, the RFID sensor readings and so on, for example:
 
 ~~~
-[INFO] [1519942333.781666, 8.236000]: In Pickup state
-[INFO] [1519942333.782325, 8.236000]: clearing costmaps
-[INFO] [1519942335.170250, 8.746000]: sent goal
-[INFO] [1519942361.150206, 17.802000]: ['human_88042']
-[INFO] [1519942363.802807, 18.746000]: action timed out in state: 1
+[INFO] [1522186485.100795, 27.102000]: -- State: Pickup
+[INFO] [1522186487.307609, 27.626000]: Sent pick-up goal
+[INFO] [1522186508.582517, 31.902000]: ['human_94763', 'human_80283']
+[INFO] [1522186517.008667, 33.626000]: Action failed in state: 1
 ...
-[INFO] [1519942564.762658, 87.654000]: requesting follow
-[INFO] [1519942564.766809, 87.656000]: success: True
-[INFO] [1519942564.767655, 87.658000]: In DropOff state
+[INFO] [1522186745.655162, 72.314000]: Requesting follow
+[INFO] [1522186745.665678, 72.316000]: success: True
+[INFO] [1522186745.666600, 72.316000]: -- State: DropOff
+[INFO] [1522186752.294614, 73.300000]: ['human_32907', 'human_20843']
 ...
 ~~~
+
+#### Re-acquiring guest after drift
+
+The solution will also re-pick-up the guest in case the guest drifts away while following
+the robot. In case you don't want to wait for the guest to randomly drift, you can use the
+[Drift service](https://bitbucket.org/osrf/servicesim/src/c67db943076feaa46cde8b594de1172ee4db7f9b/servicesim_competition/srv/Drift.srv) to trigger an immediate drift as follows:
+
+    rosservice call /servicesim/drift
+
+Then:
+
+1. The robot will keep moving until the guest's RFID sensor is out of range.
+1. ServiceBot will then start rotating to the left looking for the guest.
+1. You can choose on the dashboard to see the image on the `/servicebot/bbox_distance`
+   topic to see the robot's front-camera image with 4 dots delimiting the guest's bounding box.
+1. Once the bounding box is in the center of the robot's view, the robot will go to the guest
+   and pick them up again.
+
+![repickup.gif](https://bitbucket.org/repo/gkR8znK/images/1527883351-repickup.gif)
+
 
 ### Next Tutorial
 
