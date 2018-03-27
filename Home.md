@@ -53,5 +53,8 @@ High-level details on how the competition software is structured
 ### [Launch files](https://bitbucket.org/osrf/servicesim/wiki/Launch%20files)
 Usage and parameters for each launch file provided
 
-### [Using a different robot](Using a different robot.md)
+### [Change robot](Using a different robot.md)
 Instructions on using a custom robot with the competition
+
+### [Docker](Docker.md)
+Instructions to run the competition inside docker
