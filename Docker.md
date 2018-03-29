@@ -1,35 +1,34 @@
-Running Servicesim in a docker container: 
+Running ServiceSim in a docker container
 
-## Requirements: ##
+## Requirements
 
 * An X-Server
 * [Docker](https://docs.docker.com/install/#server)
-* [Nvidia Docker](https://github.com/NVIDIA/nvidia-docker)
+* [Nvidia Docker version 1.0](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-1.0))
 
-## Building: ##
+## Building
 
-First clone the servicesim repo, We are going to build a docker image for servicesim:
+We are going to build a docker image for ServiceSim.
 
-From `servicesim` folder do: 
+First clone the `servicesim` repo:
 
-`$ cd docker`
+    hg clone https://bitbbucket.org/osrf/servicesim
 
-`$ ./build.sh`  
+Move to the docker folder:
 
-This builds the docker image for servicesim. 
+    cd servicesim/docker
 
-## Running: ##
+Run the build script:
+
+    ./build.sh
+
+## Running
 
 While still inside `servicesim/docker` folder, Run: 
 
-`$ ./run.sh` 
+    ./run.sh 
 
-Now do, `roslaunch servicesim servicesim.launch` to see the example world 
+Now you're inside a new docker container. From within you can run
+the following to see the example world:
 
-TIP: This docker image will have terminator, a linux terminal emulator with multiple terminals in one window, launching `terminator` will give the capability use mutiple terminals in a single docker container seamlessly. 
-
-RUN :
-
-` $ terminator`
-
-` $ source /opt/ros/kinetic/setup.bash` , Remember to source this enviroment for each new terminal.
+    roslaunch servicesim servicesim.launch
