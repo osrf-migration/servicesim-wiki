@@ -20,7 +20,7 @@ Move to the docker folder:
 
 Run the build script:
 
-    ./build.sh
+    ./build.bash
 
 ## Running
 
