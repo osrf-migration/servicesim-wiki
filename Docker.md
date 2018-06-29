@@ -12,7 +12,7 @@ We are going to build a docker image for ServiceSim.
 
 First clone the `servicesim` repo:
 
-    hg clone https://bitbbucket.org/osrf/servicesim
+    hg clone https://bitbucket.org/osrf/servicesim
 
 Move to the docker folder:
 
